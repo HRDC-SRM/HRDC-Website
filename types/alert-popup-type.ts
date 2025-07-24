@@ -5,5 +5,4 @@ type AlertPopupType = {
     children?: React.ReactNode;
     style?: React.CSSProperties;
 };
-
 export type { AlertPopupType };

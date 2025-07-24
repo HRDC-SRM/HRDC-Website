@@ -4,5 +4,4 @@ type EmojiType = {
   isHighlighted?: boolean;
   isActive?: boolean;
 };
-
 export type { EmojiType };

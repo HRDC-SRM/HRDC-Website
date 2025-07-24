@@ -4,5 +4,4 @@ type MetaHeadType = {
     description?: string;
     children?: React.ReactNode;
 };
-
 export type { MetaHeadType };
