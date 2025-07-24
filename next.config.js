@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ["hekors-strapi.herokuapp.com"]
+    domains: ["herokuapp.com"]
   }
 }
 
