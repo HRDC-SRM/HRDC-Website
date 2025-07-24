@@ -15,18 +15,18 @@ const UpcomingSessions: React.FunctionComponent = () => {
           <div>
             <div className="flex flex-row items-center justify-between max-sm:flex-col">
               <div>
-                <h3 className="upcoming-sessions-title font-semibold tracking-wider text-sm uppercase text-black text-opacity-50">
+                <h3 className="upcoming-sessions-title font-semibold tracking-wider text-sm uppercase" style={{ color: "#e2e8f0" }}>
                   {"Events / Sessions"}
                 </h3>
-                <h1 className="upcoming-sessions-headline font-product-bungee mt-4 text-4xl flex flex-col text-product-brown items-start justify-start w-fit h-fit max-sm:items-center max-sm:justify-center max-sm:text-3xl">
+                <h1 className="upcoming-sessions-headline font-product-bungee mt-4 text-4xl flex flex-col items-start justify-start w-fit h-fit max-sm:items-center max-sm:justify-center max-sm:text-3xl" style={{ color: "#e2e8f0" }}>
                   {"Upcoming Sessions"}
                 </h1>
               </div>
               <div className="flex flex-row items-center justify-end gap-6 max-sm:flex-col max-sm:mt-6 max-sm:hidden">
-                <Button type="secondary" shade="product-pink">
+                <Button type="secondary" shade="#1BA94C">
                   {"All Hackathons"}
                 </Button>
-                <Button type="secondary" shade="product-teal">
+                <Button type="secondary" shade="#1BA94C">
                   {"See past sessions"}
                 </Button>
               </div>
@@ -47,13 +47,13 @@ const UpcomingSessions: React.FunctionComponent = () => {
                 </div>
               )}
               <div className="flex flex-row items-center justify-end gap-6 hidden max-sm:flex-col max-sm:flex max-sm:justify-center max-sm:items-center max-sm:mt-12">
-            <Button type="secondary" shade="product-pink">
-              {"All Hackathons"}
-            </Button>
-            <Button type="secondary" shade="product-teal">
-              {"See past hackathons"}
-            </Button>
-          </div>
+                <Button type="secondary" shade="#1BA94C">
+                  {"All Hackathons"}
+                </Button>
+                <Button type="secondary" shade="#1BA94C">
+                  {"See past hackathons"}
+                </Button>
+              </div>
             </div>
           </div>
         </div>

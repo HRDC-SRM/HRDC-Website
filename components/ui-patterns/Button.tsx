@@ -38,10 +38,10 @@ const Button: React.FunctionComponent<ButtonType> = (
         setButtonShade("#FF833E");
         break;
       case "product-purple-dark":
-        setButtonShade("#5B23FA");
+        setButtonShade("#1BA94C");
         break;
       case "product-purple-light":
-        setButtonShade("#7C4EFF");
+        setButtonShade("#1BA94C");
         break;
       case "product-teal":
         setButtonShade("#12C0AB");
@@ -50,7 +50,7 @@ const Button: React.FunctionComponent<ButtonType> = (
         setButtonShade("#FFB800");
         break;
       case "product-blue":
-        setButtonShade("#4E95FF");
+        setButtonShade("#1BA94C");
         break;
       case "product-brown":
         setButtonShade("#231C18");

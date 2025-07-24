@@ -8,7 +8,8 @@
 
 body,
 html {
-  @apply font-product-manrope;
+  @apply font-product-manrope bg-product-dark text-product-text-light;
+  scroll-behavior: smooth;
 }
 
 .wrapped-view {

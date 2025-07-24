@@ -6,12 +6,11 @@
   {
     "name": "school-bag",
     "imageName": "school-bag-emoji.svg",
-    "isHighlighted": true,
-    "isActive": true
+    "isActive": false
   },
   {
     "name": "color-palette",
-    "imageName": "color-palette-emoji.svg"
+    "imageName": "laptop-emoji.svg"
   },
   {
     "name": "rocket",
@@ -31,6 +30,6 @@
   },
   {
     "name": "magic-ball",
-    "imageName": "magic-ball-emoji.svg"
+    "imageName": "mobile-phone-emoji.svg"
   }
 ]

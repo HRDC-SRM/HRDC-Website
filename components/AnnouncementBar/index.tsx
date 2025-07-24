@@ -37,7 +37,7 @@ const AnnouncementBar: React.FunctionComponent<AnnouncementBarType> = ({
         setAnnouncementBarColor("bg-product-pink");
         break;
       case "bg-white":
-        setAnnouncementBarColor("bg-white");
+        setAnnouncementBarColor("bg-product-dark-light");
         break;
       case "bg-product-blue":
         setAnnouncementBarColor("bg-product-blue");
@@ -56,6 +56,7 @@ const AnnouncementBar: React.FunctionComponent<AnnouncementBarType> = ({
         "bg-product-purple-dark",
         "bg-product-brown",
         "bg-product-pink",
+        "bg-product-dark-light",
       ].includes(announcementBarColor)
     ) {
       setAnnouncementBarTextColor("text-white");

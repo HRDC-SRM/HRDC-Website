@@ -16,21 +16,21 @@ import MetaHead from "@/components/MetaHead";
 const Home: NextPage = () => {
   return (
     <React.Fragment>
-      <MetaHead title="HEKORS Community" description="Learn in public, Build in public" />
+      <MetaHead title="Hackerrank Developers Community SRMIST" description="Your Space to Learn, Build, and Level Up" />
       <div className="home max-sm:overflow-hidden">
         <main className="checks-container">
           <div className="hero-section-wrapper w-fit h-auto mx-auto flex flex-col items-center justify-between mb-16">
-            <Callout>{"Our Mission"}</Callout>
+            <Callout>{"Our Vision"}</Callout>
             <h1 className="font-product-bungee text-7xl mt-6 flex flex-col items-center justify-between gap-4 max-sm:text-4xl">
-              <span>{"Learn in public."}</span>
-              <span>{"Build in public."}</span>
+              <span>{"Where developers level"}</span>
+              <span>{"up and stand out"}</span>
             </h1>
             <Link
-              href="https://discord.gg/DF5yRVb4vP"
+              href="https://discord.com"
               className="mt-12"
               target="_blank"
             >
-              <Button shade="product-purple-light">{"Join Discord"}</Button>
+              <Button shade="product-purple-light">{"Join us"}</Button>
             </Link>
           </div>
           <EmojiLayer />

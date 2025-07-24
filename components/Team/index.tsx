@@ -36,17 +36,17 @@ const Team: React.FunctionComponent<TeamMemberCardType> = () => {
 
   return (
     <React.Fragment>
-      <section className="team-section py-24 my-12 bg-product-purple-dark">
+      <section id="team-section" className="team-section py-24 my-12 bg-product-purple-dark">
         <div className="team-section-content-wrapper wrapped-view">
           <h3 className="get-started-title font-semibold tracking-wider text-sm uppercase flex flex-row text-white text-opacity-50 max-sm:items-center max-sm:justify-center max-sm: max-sm:mx-auto">
-            {"The Team"}
+            {"The Core Team"}
           </h3>
           <h1 className="get-started-headline font-product-bungee mt-4 text-4xl flex flex-col items-start justify-start w-fit h-fit max-sm:items-center max-sm:justify-center max-sm:text-3xl max-sm:mx-auto">
             <span className="text-white">
               <span>{"Meet the"}</span>
-              <span className="text-product-orange">{" builders"}</span>
+              <span style={{ color: "#ff4e4e" }}>{" founders"}</span>
             </span>
-            <span className="text-white">{"behind hekors."}</span>
+            <span className="text-white">{"of HRDC SRM."}</span>
           </h1>
 
           <div className="team-members-list-wrapper mt-12 flex flex-row items-start justify-start gap-12 max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:mx-auto">

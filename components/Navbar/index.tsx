@@ -20,8 +20,8 @@ const Navbar: React.FunctionComponent<NavbarOptionType> = () => {
         <span className="navbar-logo-wrapper flex flex-row items-center justify-center w-fit h-fit gap-2 max-sm:pl-2">
           <Link href="/">
             <Image
-              src="/hekors-logo.svg"
-              alt="hekors"
+              src="/hackerrank-logo.svg"
+              alt="hrdc"
               width="50"
               height="50"
               priority
@@ -32,7 +32,7 @@ const Navbar: React.FunctionComponent<NavbarOptionType> = () => {
           {navbarOptionsRef.current?.map(
             (navbarOption: NavbarOptionType, navbarOptionIndex: number) => (
               <Link href={navbarOption?.path} key={navbarOptionIndex}>
-                <span className="navbar-option-text font-semibold text-gray-400 hover:text-gray-600">
+                <span className="navbar-option-text font-bold text-gray-300">
                   {navbarOption?.label}
                 </span>
               </Link>
@@ -42,16 +42,15 @@ const Navbar: React.FunctionComponent<NavbarOptionType> = () => {
       </div>
       <div className="flex flex-row items-center justify-end gap-8 max-sm:mx-4">
         <Link
-          href="https://github.com/hekors/.github/blob/master/profile/avengers-at-hekors.md"
-          target="_blank"
+          href="#team-section"
         >
           <span className="avengers-text-wrapper text-product-gradient brightness-110 hover:brightness-105 max-sm:hidden">
             <span className="font-product-manrope font-semibold">{"meet"}</span>
-            <span className="font-product-bungee">{" avengers"}</span>
+            <span className="font-product-bungee">{" the team"}</span>
           </span>
         </Link>
         <Link href="/events">
-          <Button type="secondary">{"Attend an event"}</Button>
+          <Button type="secondary" shade="#1BA94C">{"Attend an event"}</Button>
         </Link>
       </div>
     </div>

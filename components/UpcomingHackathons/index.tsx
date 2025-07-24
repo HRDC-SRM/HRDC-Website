@@ -43,10 +43,10 @@ const UpcomingHackathons: React.FunctionComponent<HackathonCardType> = () => {
             </h1>
           </div>
           <div className="flex flex-row items-center justify-end gap-6 max-sm:flex-col max-sm:mt-6 max-sm:hidden">
-            <Button type="secondary" shade="product-pink">
+            <Button type="secondary" shade="#1BA94C">
               {"All Hackathons"}
             </Button>
-            <Button type="secondary" shade="product-teal">
+            <Button type="secondary" shade="#1BA94C">
               {"See past hackathons"}
             </Button>
           </div>
@@ -80,10 +80,10 @@ const UpcomingHackathons: React.FunctionComponent<HackathonCardType> = () => {
               </div>
           )}
           <div className="flex flex-row items-center justify-end gap-6 hidden max-sm:flex-col max-sm:flex max-sm:justify-center max-sm:items-center max-sm:mt-12">
-            <Button type="secondary" shade="product-pink">
+            <Button type="secondary" shade="#1BA94C">
               {"All Hackathons"}
             </Button>
-            <Button type="secondary" shade="product-teal">
+            <Button type="secondary" shade="#1BA94C">
               {"See past hackathons"}
             </Button>
           </div>
@@ -123,14 +123,14 @@ function HackathonCard(
               backgroundRepeat: "no-repeat",
             }}
           />
-          <div className="upcoming-hackathon-card-content-wrapper px-4 py-6 bg-white w-full h-fit">
-            <h1 className="leading-tight text-base text-product-brown font-semibold">
+          <div className="upcoming-hackathon-card-content-wrapper px-4 py-6 bg-product-dark-light w-full h-fit">
+            <h1 className="leading-tight text-base text-product-text-light font-semibold">
               {hackathonTitle}
             </h1>
-            <p className="leading-tight text-sm text-gray-500 font-semibold">
+            <p className="leading-tight text-sm text-gray-300 font-semibold">
               {"by, " + hackathonOrganizer}
             </p>
-            <p className="leading-tight font-semibold text-xs mt-6 text-product-brown">
+            <p className="leading-tight font-semibold text-xs mt-6 text-product-text-light">
               {"Starts from " +
                 parseDate(hackathonStartDate)?.date +
                 " " +

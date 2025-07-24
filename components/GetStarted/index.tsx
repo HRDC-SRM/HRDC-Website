@@ -17,13 +17,13 @@ const GetStarted: React.FunctionComponent<GetStartedItemType> = () => {
       <section className="get-started-section bg-product-brown py-24 my-12 max-sm:mt-0 max-sm:mb-2">
         <div className="get-started-content-wrapper wrapped-view max-sm:ml-4">
           <h3 className="get-started-title font-semibold tracking-wider text-sm uppercase text-white text-opacity-50 max-sm:text-center ">
-            {"Get Started"}
+            {"Who are we?"}
           </h3>
           <h1 className="get-started-headline font-product-bungee mt-4 text-4xl flex flex-col items-start justify-start w-fit h-fit max-sm:text-center max-sm:text-3xl">
             <span className="text-white">
-              {"A space to learn, build & grow"}
+              {"Preparing Tomorrow’s Tech Leaders,"}
             </span>
-            <span className="text-product-red max-sm:mx-auto">{"together."}</span>
+            <span className="text-product-red max-sm:mx-auto">{"Today."}</span>
           </h1>
 
           <div className="get-started-items-carousel-wrapper mt-12 flex flex-row items-start justify-start gap-12 overflow-x-scroll py-8 px-4 max-sm:flex-col max-sm:items-center max-sm:gap-24 max-sm:py-10 ">
@@ -77,7 +77,7 @@ function GetStartedItem(
         setBackgroundColor("bg-product-pink");
         break;
       case "bg-white":
-        setBackgroundColor("bg-white");
+        setBackgroundColor("bg-product-dark-light");
         break;
       case "bg-product-blue":
         setBackgroundColor("bg-product-blue");
@@ -96,6 +96,7 @@ function GetStartedItem(
         "bg-product-purple-dark",
         "bg-product-brown",
         "bg-product-pink",
+        "bg-product-dark-light",
       ].includes(backgroundColor)
     ) {
       setCardTextColor("text-white");

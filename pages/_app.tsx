@@ -18,18 +18,18 @@ const App: React.FunctionComponent<AppProps> = ({
 }: AppProps) => {
   return (
     <React.Fragment>
-      <AnnouncementBar>
+      <AnnouncementBar color="bg-product-blue">
         <div className="announcement-content">
           <span className="text-xs flex flex-row items-center justify-start gap-1 max-sm:flex-col">
-            {"Build Program by HEKORS is now live"}
+            {"Recruitment season is live."}
             <span className="max-sm:mb-1">
-              Applications are now open, start from{" "}
+              Join us today, click {" "}
               <Link
-                href="https://hekors-build-program.vercel.app/"
+                href="https://forms.google.com"
                 target="_blank"
                 className="underline"
               >
-                {"🎒 Build Program"}
+                {"here ✨"}
               </Link>
             </span>
           </span>

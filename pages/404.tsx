@@ -20,7 +20,7 @@ const NotFound: NextPage = () => {
             {"Don't worry, we got you!"}
           </h1>
           <Image
-            src="/police.svg"
+            src="/police_updated.svg"
             alt="hekors-police"
             width="300"
             height="300"

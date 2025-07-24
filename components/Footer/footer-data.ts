@@ -2,63 +2,47 @@
 import { FooterOptionType, SocialLinkType } from "@/types/footer-option-type";
 
 const communityLinks: Array<FooterOptionType> = [
-  { title: "Contact Us", link: "https://github.com/hekors" },
-  { title: "Organize with HEKORS", link: "https://github.com/hekors/.github" },
+  { title: "Contact Us", link: "mailto:hrdcsrm@gmail.com" },
+  { title: "Sponsor us", link: "https://github.com/hekors/.github" },
   {
-    title: "Community Guidelines",
-    link: "https://github.com/hekors/.github/blob/master/CODE_OF_CONDUCT.md",
+    title: "Open Source",
+    link: "https://github.com/hackerrank-developers-community-srmist",
   },
   {
-    title: "Join Team",
-    link: "https://github.com/hekors/.github/tree/master/profile",
-  },
-  {
-    title: "Community Gallery",
-    link: "https://drive.google.com/drive/folders/1gR_6eD7SiPNjSc79Aykg0m8gnKcsP0rp?usp=share_link",
+    title: "Our Gallery",
+    link: "https://drive.google.com",
   },
 ];
 
 const directLinks: Array<FooterOptionType> = [
-  { title: "Hackathons", path: "" },
+  { title: "Centre of Excellence", path: "https://www.srmist.edu.in/department/department-of-computational-intelligence/centre-of-excellence-for-agentictwins-agentic-ai-digital-twins-and-metaverse/" },
   {
-    title: "Open Source",
-    link: "https://github.com/hekors/.github/blob/master/open-source/README.md",
-  },
-  { title: "MLH.io", link: "https://mlh.io" },
-  { title: "Offline Meetups", path: "" },
-  {
-    title: "Avengers at HEKORS",
-    link: "https://github.com/hekors/.github/blob/master/profile/avengers-at-hekors.md",
+    title: "Department of Computational Intelligence",
+    link: "https://www.srmist.edu.in/department/department-of-computational-intelligence/",
   },
 ];
 
 const socialLinks: Array<SocialLinkType> = [
   {
-    iconPath: "discord-icon.svg",
-    label: "discord",
-    link: "https://discord.gg/eqYJgB8A57",
-  },
-  {
-    iconPath: "twitter-icon.svg",
+    iconPath: "x-3D-icon.png",
     label: "twitter",
-    link: "https://twitter.com/hekorscommunity",
+    link: "https://twitter.com/",
   },
   {
-    iconPath: "bmac-icon.svg",
-    label: "buy-me-a-coffee",
-    link: "https://www.buymeacoffee.com/wh0sumit",
+    iconPath: "linkedin-3D-icon.png",
+    label: "linkedin",
+    link: "https://www.linkedin.com",
   },
   {
-    iconPath: "whatsapp-icon.svg",
+    iconPath: "whatsapp-3D-icon.png",
     label: "whatsapp",
-    link: "https://chat.whatsapp.com/GjIdIUYccWd1J6kWDEtxTB",
+    link: "https://whatsapp.com/",
   },
   {
-    iconPath: "notion-icon.svg",
-    label: "notion",
-    link: "https://www.notion.so/yashsehgal/HEKORS-Community-Updates-dd27307cb56d4e0d87efad9983e3329c",
+    iconPath: "instagram-3D-icon.png",
+    label: "instagram",
+    link: "https://www.instagram.com",
   },
-  { iconPath: "luma-icon.svg", label: "luma", link: "https://lu.ma/hekors" },
 ];
 
 export { communityLinks, directLinks, socialLinks };

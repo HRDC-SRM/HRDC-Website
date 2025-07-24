@@ -1,56 +1,66 @@
 [
   {
-    "picture": "/team/yash.jpg",
+    "picture": "/team/abhiraj.jpg",
     "fullName": {
-      "firstName": "Yash",
-      "lastName": "Sehgal"
+      "firstName": "Abhiraj",
+      "lastName": "Bhowmick"
     },
-    "isAvenger": true,
     "directWebsite": {
-      "label": "website/yashsehgal",
-      "link": "https://yashsehgal.com"
+      "label": "website/abhiraj",
+      "link": "https://abhiraj.co"
     },
     "socialProfile": {
-      "twitterUsername": "yashsehgaldev",
-      "instagramUsername": "sehgalyash_",
-      "linkedInUsername": "sehgalyash",
-      "githubUsername": "yashsehgal"
+      "twitterUsername": "rainboestrykr",
+      "instagramUsername": "abhiraj.fr",
+      "linkedInUsername": "abhiraj-bhowmick",
+      "githubUsername": "rainboestrykr"
     }
   },
   {
-    "picture": "/team/sumit.jpg",
+    "picture": "/team/yashi.jpg",
     "fullName": {
-      "firstName": "Sumit",
-      "lastName": "Singh"
+      "firstName": "Yashi",
+      "lastName": "Ghosh"
     },
-    "isAvenger": true,
     "directWebsite": {
-      "label": "website/wh0sumit",
-      "link": "http://wh0sumit.vercel.app"
+      "label": "website/yashighosh",
+      "link": "http://google.com"
     },
     "socialProfile": {
-      "twitterUsername": "wh0sumit",
-      "instagramUsername": "wh0sumit",
-      "linkedInUsername": "wh0sumit",
-      "githubUsername": "wh0sumit"
+      "instagramUsername": "yashi.ghosh",
+      "linkedInUsername": "yashi-ghosh-2005m",
+      "githubUsername": "yashighosh"
     }
   },
   {
-    "picture": "/team/nishant.jpg",
+    "picture": "/team/arnav.jpg",
     "fullName": {
-      "firstName": "Nishant",
-      "lastName": "Jain"
+      "firstName": "Arnav",
+      "lastName": "Puggal"
     },
-    "isAvenger": true,
     "directWebsite": {
-      "label": "website/devnishant",
-      "link": "http://devnishant.vercel.app"
+      "label": "website/arnavpuggal",
+      "link": "https://new-portfolio-website-rosy.vercel.app/"
     },
     "socialProfile": {
-      "twitterUsername": "devnishant10",
-      "instagramUsername": "nishant.jain_10",
-      "linkedInUsername": "nishantj2002",
-      "githubUsername": "nishantjain10"
+      "instagramUsername": "arnav_puggal",
+      "linkedInUsername": "arnav-puggal-ab72b5247",
+      "githubUsername": "12asascoder"
+    }
+  },
+  {
+    "picture": "/team/tanvi.jpg",
+    "fullName": {
+      "firstName": "Tanvi",
+      "lastName": "Kabi"
+    },
+    "directWebsite": {
+      "label": "website/tanvikabi",
+      "link": "https://google.com"
+    },
+    "socialProfile": {
+      "instagramUsername": "tanvikabi",
+      "linkedInUsername": "tanvi-kabi-44582b364"
     }
   }
 ]
