@@ -50,7 +50,7 @@ const Navbar: React.FunctionComponent<NavbarOptionType> = () => {
           </span>
         </Link>
         <Link href="/events">
-          <Button type="secondary" shade="#1BA94C">{"Attend an event"}</Button>
+          <Button type="secondary" shade="#1BA94C">{"Events"}</Button>
         </Link>
       </div>
     </div>
