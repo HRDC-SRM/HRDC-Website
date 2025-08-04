@@ -16,7 +16,7 @@ import MetaHead from "@/components/MetaHead";
 const Home: NextPage = () => {
   return (
     <React.Fragment>
-      <MetaHead title="Hackerrank Developers Community SRMIST" description="Your Space to Learn, Build, and Level Up" />
+      <MetaHead title="Hackerrank Developers Community SRMISTT" description="Your Space to Learn, Build, and Level Up" />
       <div className="home max-sm:overflow-hidden">
         <main className="checks-container">
           <div className="hero-section-wrapper w-fit h-auto mx-auto flex flex-col items-center justify-between mb-16">
