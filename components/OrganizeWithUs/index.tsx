@@ -17,9 +17,11 @@ const OrganizeWithUs: React.FunctionComponent = () => {
             <span>{"one of us"}</span>
           </h1>
           <div className="cta-buttons-layer-wrapper mt-12 flex flex-row items-center justify-center gap-8 w-fit h-auto max-sm:flex-col">
-            <Button type="primary" shade="#1BA94C">
-              {"Check out our domains"}
-            </Button>
+            <Link href="/domains">
+              <Button type="primary" shade="#1BA94C">
+                {"Check out our domains"}
+              </Button>
+            </Link>
             <Link
               href="https://twitter.com/hekorscommunity"
               target="_blank"
