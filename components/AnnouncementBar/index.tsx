@@ -7,6 +7,7 @@ import { AnnouncementBarType } from "@/types/announcement-bar-type";
 // Icon Imports
 import { FaTimes } from "react-icons/fa";
 
+
 const AnnouncementBar: React.FunctionComponent<AnnouncementBarType> = ({
   children,
   color = "bg-product-red",
@@ -72,7 +73,7 @@ const AnnouncementBar: React.FunctionComponent<AnnouncementBarType> = ({
         >
           <div className="announcement-bar-content-wrapper wrapped-view flex flex-row items-center justify-between">
             <div
-              className={`announcement-bar-content-wrapper w-fit h-fit mx-auto ${announcementBarTextColor}`}
+              className={`announcement-bar-content-wrapper w-fit h-fit mx-auto ${announcementBarTextColor}`} 
             >
               {children}
             </div>
