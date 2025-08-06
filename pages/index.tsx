@@ -4,7 +4,6 @@ import Link from "next/link";
 import { NextPage } from "next";
 
 // Components Imports
-import Callout from "@/components/ui-patterns/Callout";
 import EmojiLayer from "@/components/EmojiLayer";
 import GetStarted from "@/components/GetStarted";
 import HackathonCTA from "@/components/HackathonCTA";
@@ -20,7 +19,6 @@ const Home: NextPage = () => {
       <div className="home max-sm:overflow-hidden">
         <main className="checks-container">
           <div className="hero-section-wrapper w-fit h-auto mx-auto flex flex-col items-center justify-between mb-16">
-            <Callout>{"Our Vision"}</Callout>
             <h1 className="font-product-bungee text-7xl mt-6 flex flex-col items-center justify-between gap-4 max-sm:text-4xl">
               <span>{"Where developers level"}</span>
               <span>{"up and stand out"}</span>

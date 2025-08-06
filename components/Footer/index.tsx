@@ -15,7 +15,7 @@ type Props = FooterOptionType | SocialLinkType;
 const Footer: React.FunctionComponent<Props> = () => {
   return (
     <React.Fragment>
-      <section className="footer-section my-24 py-12 max-sm:mb-8 max-sm:mt-0 max-sm:py-0">
+      <section className="footer-section  py-2 max-sm:mb-8 max-sm:mt-0 max-sm:py-0">
         <div className="footer-content-wrapper wrapped-view border-b border-gray-600 pb-6">
           <div className="logo-wrapper flex flex-row items-start justify-start w-fit h-auto gap-3 max-sm:items-center max-sm:mx-auto ">
             <Image src="/hackerrank-logo.svg" alt="hackerrank" width="60" height="60" />

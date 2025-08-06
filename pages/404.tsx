@@ -5,7 +5,6 @@ import Link from "next/link";
 import { NextPage } from "next";
 
 // Components Imports
-import Callout from "@/components/ui-patterns/Callout";
 import Button from "@/components/ui-patterns/Button";
 import MetaHead from "@/components/MetaHead";
 
@@ -15,7 +14,6 @@ const NotFound: NextPage = () => {
       <MetaHead title="404" description="Page Not Found" />
       <div className="invalid-page my-12 py-12">
         <section className="invalid-page-content-wrapper text-center w-fit h-fit mx-auto flex flex-col items-center justify-start gap-1">
-          <Callout>{"Reporting: 404 (Invalid Page)"}</Callout>
           <h1 className="leading-snug font-product-bungee text-4xl mt-2">
             {"Don't worry, we got you!"}
           </h1>

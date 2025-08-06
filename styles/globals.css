@@ -51,10 +51,7 @@ html {
   background: #bbbbbb80;
 }
 
-/* Callout Override, Events Page */
-.small-callout >  span.callout-icon-wrapper > img{
-      @apply max-sm:w-[44px]
-}
+
 
 /* ScrollStack Styles */
 .scroll-stack-scroller {
