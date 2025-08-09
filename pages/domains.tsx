@@ -1,30 +1,110 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Button from '@/components/ui-patterns/Button';
-import AnimatedContent from '@/components/AnimatedContent';
 import DarkVeil from '@/components/ui-patterns/Darkveil';
-import CircularGallery from '@/components/CircularGallery';
+import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
-// Domain data for the circular gallery
-const DOMAIN_ITEMS = [
+// Domain data for the sticky scroll
+const DOMAIN_CONTENT = [
   {
-    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop&crop=center",
-    text: "Technical",
-    description: "Core development and technical implementation team. Lead community projects, create workshops, mentor developers, contribute to open source, and drive technical innovation."
+    title: "Technical",
+    description:
+      "Core development and technical implementation team. Lead community projects, create workshops, mentor developers, contribute to open source, and drive technical innovation. Build the future of technology with cutting-edge solutions.",
+    content: (
+      <div className="h-full w-full flex items-center justify-center text-white">
+        <Image
+          src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=600&fit=crop&crop=center"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="Technical domain"
+        />
+      </div>
+    ),
   },
   {
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&crop=center",
-    text: "Corporate",
-    description: "Business development and external relations powerhouse. Manage partnerships, organize corporate events, handle sponsorships, coordinate with industry professionals, and develop business strategies."
+    title: "Corporate",
+    description:
+      "Business development and external relations powerhouse. Manage partnerships, organize corporate events, handle sponsorships, coordinate with industry professionals, and develop business strategies that drive growth.",
+    content: (
+      <div className="h-full w-full flex items-center justify-center text-white">
+        <Image
+          src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop&crop=center"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="Corporate domain"
+        />
+      </div>
+    ),
   },
   {
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop&crop=center",
-    text: "Creative",
-    description: "Design, content creation, and creative direction team. Design community branding, create social media content, develop marketing campaigns, design event materials, and maintain visual consistency."
-  }
+    title: "Creative",
+    description:
+      "Design, content creation, and creative direction team. Design community branding, create social media content, develop marketing campaigns, design event materials, and maintain visual consistency across all platforms.",
+    content: (
+      <div className="h-full w-full flex items-center justify-center text-white">
+        <Image
+          src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop&crop=center"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="Creative domain"
+        />
+      </div>
+    ),
+  },
 ];
 
 const DomainsPage: React.FC = () => {
+  const [showReadyToJoin, setShowReadyToJoin] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      
+      // Show "Ready to Join" when user has scrolled 60% of the page
+      const scrollPercentage = (scrollPosition + windowHeight) / documentHeight;
+      
+      if (scrollPercentage > 0.6) {
+        setShowReadyToJoin(true);
+      }
+    };
+
+    // Create an intersection observer for the sticky scroll container
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          // If the sticky scroll container is 80% visible, show the popup
+          if (entry.intersectionRatio > 0.8) {
+            setShowReadyToJoin(true);
+          }
+        });
+      },
+      { threshold: [0.8] }
+    );
+
+    // Initial check
+    setTimeout(handleScroll, 100);
+    
+    // Observe the sticky scroll container
+    const stickyScrollElement = document.querySelector('.sticky-scroll-container');
+    if (stickyScrollElement) {
+      observer.observe(stickyScrollElement);
+    }
+    
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <React.Fragment>
       <div className="dark-veil-wrapper">
@@ -61,53 +141,66 @@ const DomainsPage: React.FC = () => {
           </div>
 
           {/* Domain Cards Section */}
-          <div className="mb-16">
-            <div className="max-w-6xl mx-auto">
-              <div style={{ height: '600px', position: 'relative' }}>
-                <CircularGallery 
-                  items={DOMAIN_ITEMS}
-                  bend={0} 
-                  textColor="#ffffff" 
-                  borderRadius={0} 
-                  scrollEase={0.02}
-                />
+          <div className="mb-8 md:mb-16">
+            <div className="max-w-full md:max-w-7xl lg:max-w-8xl mx-auto px-2 md:px-4">
+              <div className="sticky-scroll-container">
+                <StickyScroll content={DOMAIN_CONTENT} />
               </div>
               
-              {/* Ready to Join Animation Section */}
-              <AnimatedContent
-                distance={50}
-                direction="vertical"
-                reverse={false}
-                duration={1.5}
-                ease="power2.out"
-                initialOpacity={0}
-                animateOpacity
-                scale={0.9}
-                threshold={0.2}
-                delay={0.8}
-              >
-                <div className="text-center mt-20 mb-16 relative">
-                  <div className="absolute inset-0 flex items-center justify-center opacity-5">
-                    <div className="text-9xl font-product-bungee text-green-400">🌟</div>
-                  </div>
-                  <h2 className="text-3xl md:text-4xl font-product-bungee text-white mb-6 relative z-10">
-                    Ready to Join?
-                  </h2>
-                  <p className="text-product-text-light text-lg md:text-xl mb-10 font-product-manrope max-w-3xl mx-auto relative z-10 leading-relaxed">
-                    Choose the domain that best fits your skills and interests. We&apos;re looking for passionate individuals who want to make a difference in the tech community.
-                  </p>
-                  <div className="flex gap-4 justify-center flex-wrap relative z-10">
-                    <Button type="primary" shade="product-purple-light">
-                      Apply Now
-                    </Button>
-                    <Link href="/">
-                      <Button type="secondary" shade="product-purple-light">
-                        Learn More About Us
+              {/* Ready to Join Section */}
+              <AnimatePresence>
+                {showReadyToJoin && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 50, scale: 0.9 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 50, scale: 0.9 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="text-center mt-20 mb-16 relative"
+                  >
+                    <div className="absolute inset-0 flex items-center justify-center opacity-5">
+                      <motion.div 
+                        initial={{ rotate: 0 }}
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 2, ease: "linear", repeat: Infinity }}
+                        className="text-9xl font-product-bungee text-green-400"
+                      >
+                        🌟
+                      </motion.div>
+                    </div>
+                    <motion.h2 
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.2, duration: 0.6 }}
+                      className="text-3xl md:text-4xl font-product-bungee text-white mb-6 relative z-10"
+                    >
+                      Ready to Join?
+                    </motion.h2>
+                    <motion.p 
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.4, duration: 0.6 }}
+                      className="text-product-text-light text-lg md:text-xl mb-10 font-product-manrope max-w-3xl mx-auto relative z-10 leading-relaxed"
+                    >
+                      Choose the domain that best fits your skills and interests. We&apos;re looking for passionate individuals who want to make a difference in the tech community.
+                    </motion.p>
+                    <motion.div 
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.6, duration: 0.6 }}
+                      className="flex gap-4 justify-center flex-wrap relative z-10"
+                    >
+                      <Button type="primary" shade="product-purple-light">
+                        Apply Now
                       </Button>
-                    </Link>
-                  </div>
-                </div>
-              </AnimatedContent>
+                      <Link href="/">
+                        <Button type="secondary" shade="product-purple-light">
+                          Learn More About Us
+                        </Button>
+                      </Link>
+                    </motion.div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </main>
