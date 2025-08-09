@@ -14,7 +14,9 @@ const GetStarted: React.FunctionComponent<GetStartedItemType> = () => {
 
   return (
     <React.Fragment>
-      <section className="get-started-section bg-product-brown py-24 my-12 max-sm:mt-0 max-sm:mb-2">
+<section className="get-started-section bg-black bg-opacity-40 rounded-lg py-24 my-12 max-sm:mt-0 max-sm:mb-2">
+
+
         <div className="get-started-content-wrapper wrapped-view max-sm:ml-4">
           <h3 className="get-started-title font-semibold tracking-wider text-sm uppercase text-white text-opacity-50 max-sm:text-center ">
             {"Who are we?"}

@@ -36,7 +36,7 @@ const Team: React.FunctionComponent<TeamMemberCardType> = () => {
 
   return (
     <React.Fragment>
-      <section id="team-section" className="team-section py-24 my-12 bg-product-purple-dark">
+      <section id="team-section" className="team-section py-24 my-12 ">
         <div className="team-section-content-wrapper wrapped-view">
           <h3 className="get-started-title font-semibold tracking-wider text-sm uppercase flex flex-row text-white text-opacity-50 max-sm:items-center max-sm:justify-center max-sm: max-sm:mx-auto">
             {"The Core Team"}
