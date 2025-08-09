@@ -8,7 +8,7 @@ import Button from "@/components/ui-patterns/Button";
 const OrganizeWithUs: React.FunctionComponent = () => {
   return (
     <React.Fragment>
-      <section className="organize-with-us-section checks-container max-sm:py-12 ">
+      <section className="organize-with-us-section checks-container max-sm:py-12 py-20 ">
         <div className="organize-with-us__cta-content-wrapper mt-12 w-fit h-auto mx-auto flex flex-col items-center justify-between mb-16 max-sm:mt-0 max-sm:mb-0">
           <h1 className="font-product-bungee text-6xl flex flex-col items-center justify-start gap-4 mt-6 max-sm:text-3xl max-sm: max-sm:gap-1">
             <span>{"Apply to become"}</span>

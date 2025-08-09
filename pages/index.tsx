@@ -49,26 +49,81 @@ const Home: NextPage = () => {
       <MetaHead
         title="Hackerrank Developers Community SRMIST"
         description="Your Space to Learn, Build, and Level Up"
-      />
-
-      {/* ✅ Animated background */}
-      
+      />      
 
       {/* ✅ Foreground content unchanged */}
       <div className="home max-sm:overflow-hidden relative z-10">
         <main className="checks-container">
-          <div className="hero-section-wrapper w-fit h-auto mx-auto flex flex-col items-center justify-between mb-16">
-            <h1 className="mt-6 flex flex-col items-center justify-between gap-4 max-sm:text-4xl text-7xl font-product-bungee text-center">
-              Where<GradientText>developers level</GradientText>
-              up and<GradientText>stand out</GradientText>
+          <div className="hero-section-wrapper w-fit h-auto mx-auto flex flex-col items-center justify-center min-h-screen">
+            <h1 className="flex flex-col items-center justify-center gap-4 max-sm:text-4xl text-7xl font-product-bungee text-center -mt-24">
+              Where<GradientText>developers level</GradientText> up and<GradientText>stand out</GradientText>
             </h1>
 
             <Link href="https://discord.com" className="mt-12" target="_blank">
               <Button shade="product-purple-light">Join us</Button>
             </Link>
+
+            {/* Floating code blocks */}
+            <div className="mt-16 relative">
+              <div className="flex items-center justify-center space-x-8 max-sm:grid max-sm:grid-cols-3 max-sm:gap-4 max-sm:space-x-0 max-sm:space-y-0 max-sm:p-2.5">
+                <div className="bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg p-6 transform -rotate-6 hover:rotate-0 transition-all duration-500 hover:scale-105 max-sm:transform-none max-sm:hover:scale-100 max-sm:p-4 max-sm:overflow-hidden cursor-pointer">
+                  <div className="text-green-400 text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">const</div>
+                  <div className="text-blue-400 text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">developer</div>
+                  <div className="text-white text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">=</div>
+                  <div className="text-yellow-400 text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">&quot;HRDC&quot;</div>
+                </div>
+                
+                <div className="bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg p-6 transform rotate-6 hover:rotate-0 transition-all duration-500 hover:scale-105 max-sm:transform-none max-sm:hover:scale-100 max-sm:p-4 max-sm:overflow-hidden cursor-pointer">
+                  <div className="text-green-400 text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">if</div>
+                  <div className="text-white text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">(</div>
+                  <div className="text-blue-400 text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">passion</div>
+                  <div className="text-white text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">) {'{'}</div>
+                  <div className="text-purple-400 text-sm font-mono ml-2 max-sm:text-xs max-sm:ml-1 max-sm:break-words max-sm:whitespace-normal">join()</div>
+                  <div className="text-white text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">{'}'}</div>
+                </div>
+                
+                <div className="bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg p-6 transform -rotate-3 hover:rotate-0 transition-all duration-500 hover:scale-105 max-sm:transform-none max-sm:hover:scale-100 max-sm:p-4 max-sm:overflow-hidden cursor-pointer">
+                  <div className="text-green-400 text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">while</div>
+                  <div className="text-white text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">(</div>
+                  <div className="text-blue-400 text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">learning</div>
+                  <div className="text-white text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">) {'{'}</div>
+                  <div className="text-purple-400 text-sm font-mono ml-2 max-sm:text-xs max-sm:ml-1 max-sm:break-words max-sm:whitespace-normal">grow()</div>
+                  <div className="text-white text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">{'}'}</div>
+                </div>
+
+                <div className="bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg p-6 transform rotate-12 hover:rotate-0 transition-all duration-500 hover:scale-105 max-sm:transform-none max-sm:hover:scale-100 max-sm:p-4 max-sm:overflow-hidden cursor-pointer">
+                  <div className="text-green-400 text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">function</div>
+                  <div className="text-blue-400 text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">build() {'{'}</div>
+                  <div className="text-purple-400 text-sm font-mono ml-2 max-sm:text-xs max-sm:ml-1 max-sm:break-words max-sm:whitespace-normal">return</div>
+                  <div className="text-yellow-400 text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">&quot;future&quot;</div>
+                  <div className="text-white text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">{'}'}</div>
+                </div>
+
+                <div className="bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg p-6 transform -rotate-9 hover:rotate-0 transition-all duration-500 hover:scale-105 max-sm:transform-none max-sm:hover:scale-100 max-sm:p-4 max-sm:overflow-hidden cursor-pointer">
+                  <div className="text-green-400 text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">class</div>
+                  <div className="text-blue-400 text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">Community {'{'}</div>
+                  <div className="text-purple-400 text-sm font-mono ml-2 max-sm:text-xs max-sm:ml-1 max-sm:break-words max-sm:whitespace-normal">constructor() {'{'}</div>
+                  <div className="text-cyan-400 text-sm font-mono ml-4 max-sm:text-xs max-sm:ml-2 max-sm:break-words max-sm:whitespace-normal">this.name = &quot;HRDC&quot;</div>
+                  <div className="text-purple-400 text-sm font-mono max-sm:text-xs max-sm:ml-1 max-sm:break-words max-sm:whitespace-normal">{'}'}</div>
+                  <div className="text-white text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">{'}'}</div>
+                </div>
+
+                <div className="bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg p-6 transform rotate-3 hover:rotate-0 transition-all duration-500 hover:scale-105 max-sm:transform-none max-sm:hover:scale-100 max-sm:p-4 max-sm:overflow-hidden cursor-pointer">
+                  <div className="text-green-400 text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">const</div>
+                  <div className="text-blue-400 text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">skills =</div>
+                  <div className="text-yellow-400 text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">[</div>
+                  <div className="text-cyan-400 text-sm font-mono ml-2 max-sm:text-xs max-sm:ml-1 max-sm:break-words max-sm:whitespace-normal">&quot;coding&quot;,</div>
+                  <div className="text-cyan-400 text-sm font-mono ml-2 max-sm:text-xs max-sm:ml-1 max-sm:break-words max-sm:whitespace-normal">&quot;collaboration&quot;,</div>
+                  <div className="text-cyan-400 text-sm font-mono ml-2 max-sm:text-xs max-sm:ml-1 max-sm:break-words max-sm:whitespace-normal">&quot;innovation&quot;</div>
+                  <div className="text-yellow-400 text-sm font-mono max-sm:text-xs max-sm:break-words max-sm:whitespace-normal">]</div>
+                </div>
+              </div>
+            </div>
+
+            {/* <EmojiLayer /> */}
           </div>
 
-          <EmojiLayer />
+
         </main>
 
         <GetStarted />

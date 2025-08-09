@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
+import { useRouter } from "next/router";
 
 // Components Imports
 import Button from "@/components/ui-patterns/Button";
@@ -13,6 +14,8 @@ import { NavbarOptionType } from "@/types/navbar-option-type";
 
 const Navbar: React.FunctionComponent<NavbarOptionType> = () => {
   const navbarOptionsRef = useRef<Array<NavbarOptionType>>(NavbarOptionsData);
+  const router = useRouter();
+  const isAboutUsPage = router.pathname === "/aboutUs";
 
   return (
     <div className="navbar wrapped-view py-8 flex flex-row items-center justify-between max-sm:pt-8 pb-2">
@@ -42,11 +45,17 @@ const Navbar: React.FunctionComponent<NavbarOptionType> = () => {
       </div>
       <div className="flex flex-row items-center justify-end gap-8 max-sm:mx-4">
         <Link
-          href="#team-section"
+          href={isAboutUsPage ? "/" : "/aboutUs"}
         >
           <span className="avengers-text-wrapper text-product-gradient brightness-110 hover:brightness-105 max-sm:hidden">
-            <span className="font-product-manrope font-semibold">{"meet"}</span>
-            <span className="font-product-bungee">{" the team"}</span>
+            {isAboutUsPage ? (
+              <span className="font-product-bungee font-bold">{"HOME"}</span>
+            ) : (
+              <>
+                <span className="font-product-manrope font-semibold">{"meet"}</span>
+                <span className="font-product-bungee">{" the team"}</span>
+              </>
+            )}
           </span>
         </Link>
         <Link href="/events">

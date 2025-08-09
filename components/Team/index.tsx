@@ -8,6 +8,7 @@ import TeamMembersData from "@/common/dataSource/team-data.json";
 
 // Components Imports
 import { TeamMemberCardSkeleton } from "@/components/ui-patterns/Skeleton";
+import Button from "@/components/ui-patterns/Button";
 
 // Types Imports
 import { TeamMemberCardType } from "@/types/team-type";
@@ -36,7 +37,7 @@ const Team: React.FunctionComponent<TeamMemberCardType> = () => {
 
   return (
     <React.Fragment>
-      <section id="team-section" className="team-section py-24 my-12 ">
+      <section id="team-section" className="team-section py-24 my-12  bg-black bg-opacity-40 ">
         <div className="team-section-content-wrapper wrapped-view">
           <h3 className="get-started-title font-semibold tracking-wider text-sm uppercase flex flex-row text-white text-opacity-50 max-sm:items-center max-sm:justify-center max-sm: max-sm:mx-auto">
             {"The Core Team"}
@@ -83,6 +84,15 @@ const Team: React.FunctionComponent<TeamMemberCardType> = () => {
                 <TeamMemberCardSkeleton visibility={20} />
               </div>
             )}
+          </div>
+          
+          {/* Meet the Team Button */}
+          <div className="meet-team-button-wrapper mt-12 flex justify-center">
+            <Link href="/aboutUs">
+              <Button type="secondary" shade="#05c770">
+                Meet the Team
+              </Button>
+            </Link>
           </div>
         </div>
       </section>

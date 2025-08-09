@@ -42,6 +42,25 @@ const Events: NextPage = () => {
       
       <MetaHead title={`${new Date().getFullYear()} Season`} description="Hackathons, Sessions & Events" />
       
+      {/* Cross Button - Top Right Corner */}
+      <Link href="/" className="fixed top-6 right-6 z-[60]">
+        <button className="w-12 h-12 bg-gray-800/80 hover:bg-gray-700/80 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110 border border-gray-600/50">
+          <svg 
+            className="w-6 h-6 text-white" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24"
+          >
+            <path 
+              strokeLinecap="round" 
+              strokeLinejoin="round" 
+              strokeWidth={2} 
+              d="M6 18L18 6M6 6l12 12" 
+            />
+          </svg>
+        </button>
+      </Link>
+
       {/* Coming Soon Overlay */}
       <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/20 backdrop-blur-sm">
         <div className="text-center">
@@ -51,11 +70,11 @@ const Events: NextPage = () => {
           <p className="font-product-manrope text-xl md:text-2xl text-product-text-light animate-bounce">
             🚀 We&apos;re working on something amazing!
           </p>
-           <Link href="\" className="z-50">
+           <Link href="/" className="z-50">
 
-    <Button shade="#1BA94C" hoverShade="#1BA94C" className="shadow-lg hover:scale-105 transition-transform duration-200 mt-12 px-6 py- 8 mt-8">
+    {/* <Button shade="#1BA94C" hoverShade="#1BA94C" className="shadow-lg hover:scale-105 transition-transform duration-200 mt-12 px-6 py- 8 mt-8">
       ← Back to Home
-    </Button>
+    </Button> */}
   </Link>
         </div>
       </div>

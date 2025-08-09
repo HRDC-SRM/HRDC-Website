@@ -2,16 +2,19 @@
 import { FooterOptionType, SocialLinkType } from "@/types/footer-option-type";
 
 const communityLinks: Array<FooterOptionType> = [
-  { title: "Contact Us", link: "mailto:hrdcsrm@gmail.com" },
-  { title: "Sponsor us", link: "https://github.com/hekors/.github" },
-  {
-    title: "Open Source",
-    link: "https://github.com/hackerrank-developers-community-srmist",
+  { 
+    title: "Contact Us", 
+    link: "https://mail.google.com/mail/?view=cm&fs=1&to=hrdcsrm@gmail.com" 
   },
-  {
-    title: "Our Gallery",
-    link: "https://drive.google.com",
-  },
+  // { title: "Sponsor us", link: "https://github.com/hekors/.github" },
+  // {
+  //   title: "Open Source",
+  //   link: "https://github.com/hackerrank-developers-community-srmist",
+  // },
+  // {
+  //   title: "Our Gallery",
+  //   link: "https://drive.google.com",
+  // },
 ];
 
 const directLinks: Array<FooterOptionType> = [
@@ -23,11 +26,6 @@ const directLinks: Array<FooterOptionType> = [
 ];
 
 const socialLinks: Array<SocialLinkType> = [
-  {
-    iconPath: "x-3D-icon.png",
-    label: "twitter",
-    link: "https://twitter.com/",
-  },
   {
     iconPath: "linkedin-3D-icon.png",
     label: "linkedin",
@@ -41,7 +39,7 @@ const socialLinks: Array<SocialLinkType> = [
   {
     iconPath: "instagram-3D-icon.png",
     label: "instagram",
-    link: "https://www.instagram.com",
+    link: "https://www.instagram.com/hrdc.srm/",
   },
 ];
 

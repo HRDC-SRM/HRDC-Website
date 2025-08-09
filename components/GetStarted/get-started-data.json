@@ -1,15 +1,15 @@
 [
   {
     "title": {
-      "emoji": "🤗",
-      "text" : "About us"
+      "emoji": "🎉",
+      "text" : "Community Events"
     },
-    "bgColor": "bg-white",
+    "bgColor": "bg-product-blue",
     "description": [
-      "We’re a student-led tech community driven by one mission — to bridge the gap between academic learning and industry expectations."
+      "Join our vibrant community events, meetups, and networking sessions to connect with fellow developers and industry professionals."
     ],
-    "path": "https://lu.ma/community/com-JOfvbmBawEqrJuk/calendar",
-    "hasNewTab": true
+    "path": "/events",
+    "hasNewTab": false
   },
   {
     "title": {
@@ -44,17 +44,6 @@
     ],
     "path": "https://github.com/hekors/.github/blob/master/open-source/README.md",
     "hasNewTab": true
-  },
-  {
-    "title": {
-      "emoji": "💡",
-      "text" : "Real-World Coding Challenges"
-    },
-    "bgColor": "bg-product-pink",
-    "description": [
-      "Practice solving problems and patterns that reflect industry standards and make you interview-ready"
-    ],
-    "path": "https://drive.google.com/drive/folders/1gR_6eD7SiPNjSc79Aykg0m8gnKcsP0rp?usp=share_link",
-    "hasNewTab": true
   }
+
 ]
