@@ -51,6 +51,12 @@ const Events: NextPage = () => {
           <p className="font-product-manrope text-xl md:text-2xl text-product-text-light animate-bounce">
             🚀 We&apos;re working on something amazing!
           </p>
+           <Link href="\" className="z-50">
+
+    <Button shade="#1BA94C" hoverShade="#1BA94C" className="shadow-lg hover:scale-105 transition-transform duration-200 mt-12 px-6 py- 8 mt-8">
+      ← Back to Home
+    </Button>
+  </Link>
         </div>
       </div>
 
