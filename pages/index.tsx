@@ -4,7 +4,6 @@ import Link from "next/link";
 import { NextPage } from "next";
 
 // Component Imports
-import EmojiLayer from "@/components/EmojiLayer";
 import GetStarted from "@/components/GetStarted";
 // import HackathonCTA from "@/components/HackathonCTA";
 import OrganizeWithUs from "@/components/OrganizeWithUs";
@@ -47,7 +46,7 @@ const Home: NextPage = () => {
         />
       </div>
       <MetaHead
-        title="Hackerrank Developers Community SRMIST"
+        title="HRDC SRMIST"
         description="Your Space to Learn, Build, and Level Up"
       />      
 

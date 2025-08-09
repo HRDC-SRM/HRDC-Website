@@ -3,12 +3,12 @@ import Head from 'next/head'
 
 const MetaHead: React.FunctionComponent<MetaHeadType> = ({
   title="Hackerrank Developers Community SRMIST",
-  description="Your Space to Learn, Build, and Level Up",
+  // description="Your Space to Learn, Build, and Level Up",
   children
 }: MetaHeadType, props) => {
   return (
     <Head {...props}>
-      <title>{`${title} - ${description}`}</title>
+      <title>{`${title}`}</title>
       <link rel="apple-touch-icon" sizes="180x180" href='/assets/favicon/apple-touch-icon.png' />
       <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon/favicon-32x32.png" />
       <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon/favicon-16x16.png" />
