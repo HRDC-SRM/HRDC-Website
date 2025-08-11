@@ -5,10 +5,6 @@ import { NextPage } from "next";
 // Library Imports
 import axios from "axios";
 
-// Components Imports
-import { getHackathon } from "@/middleware/hackathons-api";
-import { baseURL } from "@/common/utils";
-
 // Types Imports
 import { HackathonCardType } from "@/types/hackathon-types";
 

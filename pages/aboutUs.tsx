@@ -45,7 +45,7 @@ const AboutUs: React.FC = () => {
           </h3> */}
           <h1 className="get-started-headline font-product-bungee mt-4 text-4xl flex flex-row items-center justify-center w-fit h-fit gap-2 mx-auto max-sm:text-3xl">
             <span className="text-white">{"The "}</span>
-            <span style={{ color: "#ff4e4e" }}>{" founders "}</span>
+            <span style={{ color: "#ff4e4e" }}>{" Core Team "}</span>
             <span className="text-white">{" of HRDC SRM"}</span>
           </h1>
 
@@ -104,7 +104,15 @@ const AboutUs: React.FC = () => {
               <div className="domain-images-wrapper flex flex-row gap-6 max-sm:gap-4">
                 <div className="domain-lead-card-wrapper flex flex-col items-stretch justify-start gap-3 w-fit max-w-[280px] max-sm:max-w-[200px]">
                   <div className="domain-lead-picture-container relative border-2 border-white w-[280px] h-[370px] max-sm:w-[200px] max-sm:h-[260px] bg-gray-700">
-                    <div className="w-16 h-16 max-sm:w-12 max-sm:h-12 bg-gray-500 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                    {/* <div className="w-16 h-16 max-sm:w-12 max-sm:h-12 bg-gray-500 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div> */}
+                    <Image
+                      src="/team/shagun.jpg"
+                      alt="Shagun Upman"
+                      width={1500}
+                      height={2100}
+                      className="relative border-2 border-white -top-2 -left-2 hover:-top-1 hover:-left-1 transition-all w-full h-[370px]"
+                      priority
+                    />
                   </div>
                   <div className="domain-lead-card-details-wrapper max-sm:text-center">
                     <div className="flex flex-row items-start justify-between max-sm:flex-col max-sm:items-center max-sm:justify-center">
@@ -112,22 +120,14 @@ const AboutUs: React.FC = () => {
                         <h3 className="domain-lead__fullName-wrapper font-semibold text-white text-lg leading-tight">
                           Shagun Upman
                         </h3>
-                        <span className="domain-lead__directWebsite-wrapper text-sm font-semibold text-white text-opacity-50 hover:text-opacity-60 leading-tight">
-                          <a href="#" target="_blank" rel="noreferrer">
-                            Portfolio
-                          </a>
-                        </span>
                       </div>
                     </div>
                     <div className="domain-lead__socialsWrapper w-fit h-auto mt-4 flex flex-row items-center justify-start gap-2 text-2xl text-white text-opacity-80 max-sm:justify-center max-sm:mx-auto">
-                      <a href="#" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
+                      <a href="https://www.instagram.com/shagun_upman/" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
                         <FaInstagram />
                       </a>
-                      <a href="#" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
+                      <a href="https://www.linkedin.com/in/shagun-upman-7086a034b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
                         <FaLinkedinIn />
-                      </a>
-                      <a href="#" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
-                        <FaGithub />
                       </a>
                     </div>
 
@@ -135,7 +135,15 @@ const AboutUs: React.FC = () => {
                 </div>
                 <div className="domain-lead-card-wrapper flex flex-col items-stretch justify-start gap-3 w-fit max-w-[280px] max-sm:max-w-[200px]">
                   <div className="domain-lead-picture-container relative border-2 border-white w-[280px] h-[370px] max-sm:w-[200px] max-sm:h-[260px] bg-gray-700">
-                    <div className="w-16 h-16 max-sm:w-12 max-sm:h-12 bg-gray-500 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                    {/* <div className="w-16 h-16 max-sm:w-12 max-sm:h-12 bg-gray-500 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div> */}
+                      <Image
+                      src="/team/aarushi.jpeg"
+                      alt="Aarushi Sarkar"
+                      width={1500}
+                      height={2100}
+                      className="relative border-2 border-white -top-2 -left-2 hover:-top-1 hover:-left-1 transition-all w-full h-[370px]"
+                      priority
+                    />
                   </div>
                   <div className="domain-lead-card-details-wrapper max-sm:text-center">
                     <div className="flex flex-row items-start justify-between max-sm:flex-col max-sm:items-center max-sm:justify-center">
@@ -143,25 +151,16 @@ const AboutUs: React.FC = () => {
                         <h3 className="domain-lead__fullName-wrapper font-semibold text-white text-lg leading-tight">
                           Aarushi Sarkar
                         </h3>
-                        <span className="domain-lead__directWebsite-wrapper text-sm font-semibold text-white text-opacity-50 hover:text-opacity-60 leading-tight">
-                          <a href="#" target="_blank" rel="noreferrer">
-                            Portfolio
-                          </a>
-                        </span>
                       </div>
                     </div>
                     <div className="domain-lead__socialsWrapper w-fit h-auto mt-4 flex flex-row items-center justify-start gap-2 text-2xl text-white text-opacity-80 max-sm:justify-center max-sm:mx-auto">
-                      <a href="#" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
+                      <a href="https://www.instagram.com/aarushiisarkar/" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
                         <FaInstagram />
                       </a>
                       <a href="#" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
                         <FaLinkedinIn />
                       </a>
-                      <a href="#" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
-                        <FaGithub />
-                      </a>
                     </div>
-
                   </div>
                 </div>
               </div>
@@ -175,7 +174,14 @@ const AboutUs: React.FC = () => {
               <div className="domain-images-wrapper flex flex-row gap-6 max-sm:gap-4">
                 <div className="domain-lead-card-wrapper flex flex-col items-stretch justify-start gap-3 w-fit max-w-[280px] max-sm:max-w-[200px]">
                   <div className="domain-lead-picture-container relative border-2 border-white w-[280px] h-[370px] max-sm:w-[200px] max-sm:h-[260px] bg-gray-700">
-                    <div className="w-16 h-16 max-sm:w-12 max-sm:h-12 bg-gray-500 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                      <Image
+                      src="/team/anik.jpg"
+                      alt="Anik Das"
+                      width={1500}
+                      height={2100}
+                      className="relative border-2 border-white -top-2 -left-2 hover:-top-1 hover:-left-1 transition-all w-full h-[370px]"
+                      priority
+                    />
                   </div>
                   <div className="domain-lead-card-details-wrapper max-sm:text-center">
                     <div className="flex flex-row items-start justify-between max-sm:flex-col max-sm:items-center max-sm:justify-center">
@@ -191,13 +197,13 @@ const AboutUs: React.FC = () => {
                       </div>
                     </div>
                     <div className="domain-lead__socialsWrapper w-fit h-auto mt-4 flex flex-row items-center justify-start gap-2 text-2xl text-white text-opacity-80 max-sm:justify-center max-sm:mx-auto">
-                      <a href="#" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
+                      <a href="https://www.instagram.com/anikk.dass/" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
                         <FaInstagram />
                       </a>
-                      <a href="#" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
+                      <a href="https://www.linkedin.com/in/anikdas21/" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
                         <FaLinkedinIn />
                       </a>
-                      <a href="#" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
+                      <a href="https://github.com/coderanik" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
                         <FaGithub />
                       </a>
                     </div>
@@ -206,7 +212,14 @@ const AboutUs: React.FC = () => {
                 </div>
                 <div className="domain-lead-card-wrapper flex flex-col items-stretch justify-start gap-3 w-fit max-w-[280px] max-sm:max-w-[200px]">
                   <div className="domain-lead-picture-container relative border-2 border-white w-[280px] h-[370px] max-sm:w-[200px] max-sm:h-[260px] bg-gray-700">
-                    <div className="w-16 h-16 max-sm:w-12 max-sm:h-12 bg-gray-500 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                    <Image
+                      src="/team/pratyush.jpg"
+                      alt="Pratyush Srivastava"
+                      width={1500}
+                      height={2100}
+                      className="relative border-2 border-white -top-2 -left-2 hover:-top-1 hover:-left-1 transition-all w-full h-[370px]"
+                      priority
+                    />
                   </div>
                   <div className="domain-lead-card-details-wrapper max-sm:text-center">
                     <div className="flex flex-row items-start justify-between max-sm:flex-col max-sm:items-center max-sm:justify-center">
@@ -222,13 +235,13 @@ const AboutUs: React.FC = () => {
                       </div>
                     </div>
                     <div className="domain-lead__socialsWrapper w-fit h-auto mt-4 flex flex-row items-center justify-start gap-2 text-2xl text-white text-opacity-80 max-sm:justify-center max-sm:mx-auto">
-                      <a href="#" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
+                      <a href="https://www.instagram.com/pratyushsrivastavasgn/" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
                         <FaInstagram />
                       </a>
-                      <a href="#" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
+                      <a href="https://www.linkedin.com/in/pratyush-srivastava-2b0480316?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
                         <FaLinkedinIn />
                       </a>
-                      <a href="#" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
+                      <a href="https://github.com/Pratyushsrivastavasgn" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
                         <FaGithub />
                       </a>
                     </div>
@@ -246,7 +259,15 @@ const AboutUs: React.FC = () => {
               <div className="domain-images-wrapper flex flex-row gap-6 max-sm:gap-4">
                 <div className="domain-lead-card-wrapper flex flex-col items-stretch justify-start gap-3 w-fit max-w-[280px] max-sm:max-w-[200px]">
                   <div className="domain-lead-picture-container relative border-2 border-white w-[280px] h-[370px] max-sm:w-[200px] max-sm:h-[260px] bg-gray-700">
-                    <div className="w-16 h-16 max-sm:w-12 max-sm:h-12 bg-gray-500 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                    {/* <div className="w-16 h-16 max-sm:w-12 max-sm:h-12 bg-gray-500 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div> */}
+                      <Image
+                      src="/team/amrita.jpg"
+                      alt="Amrita Hariharan"
+                      width={1500}
+                      height={2100}
+                      className="relative border-2 border-white -top-2 -left-2 hover:-top-1 hover:-left-1 transition-all w-full h-[370px]"
+                      priority
+                    />
                   </div>
                   <div className="domain-lead-card-details-wrapper max-sm:text-center">
                     <div className="flex flex-row items-start justify-between max-sm:flex-col max-sm:items-center max-sm:justify-center">
@@ -254,22 +275,14 @@ const AboutUs: React.FC = () => {
                         <h3 className="domain-lead__fullName-wrapper font-semibold text-white text-lg leading-tight">
                           Amrita Hariharan
                         </h3>
-                        <span className="domain-lead__directWebsite-wrapper text-sm font-semibold text-white text-opacity-50 hover:text-opacity-60 leading-tight">
-                          <a href="#" target="_blank" rel="noreferrer">
-                            Portfolio
-                          </a>
-                        </span>
                       </div>
                     </div>
                     <div className="domain-lead__socialsWrapper w-fit h-auto mt-4 flex flex-row items-center justify-start gap-2 text-2xl text-white text-opacity-80 max-sm:justify-center max-sm:mx-auto">
-                      <a href="#" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
+                      <a href="https://www.instagram.com/amrita_hariharan_/" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
                         <FaInstagram />
                       </a>
-                      <a href="#" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
+                      <a href="https://www.linkedin.com/in/amrita-hariharan2205/" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
                         <FaLinkedinIn />
-                      </a>
-                      <a href="#" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
-                        <FaGithub />
                       </a>
                     </div>
 
@@ -277,7 +290,15 @@ const AboutUs: React.FC = () => {
                 </div>
                 <div className="domain-lead-card-wrapper flex flex-col items-stretch justify-start gap-3 w-fit max-w-[280px] max-sm:max-w-[200px]">
                   <div className="domain-lead-picture-container relative border-2 border-white w-[280px] h-[370px] max-sm:w-[200px] max-sm:h-[260px] bg-gray-700">
-                    <div className="w-16 h-16 max-sm:w-12 max-sm:h-12 bg-gray-500 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                    {/* <div className="w-16 h-16 max-sm:w-12 max-sm:h-12 bg-gray-500 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div> */}
+                      <Image
+                      src="/team/ayush.jpg"
+                      alt="Ayush Kumar"
+                      width={1500}
+                      height={2100}
+                      className="relative border-2 border-white -top-2 -left-2 hover:-top-1 hover:-left-1 transition-all w-full h-[370px]"
+                      priority
+                    />
                   </div>
                   <div className="domain-lead-card-details-wrapper max-sm:text-center">
                     <div className="flex flex-row items-start justify-between max-sm:flex-col max-sm:items-center max-sm:justify-center">
@@ -285,25 +306,16 @@ const AboutUs: React.FC = () => {
                         <h3 className="domain-lead__fullName-wrapper font-semibold text-white text-lg leading-tight">
                           Ayush Kumar
                         </h3>
-                        <span className="domain-lead__directWebsite-wrapper text-sm font-semibold text-white text-opacity-50 hover:text-opacity-60 leading-tight">
-                          <a href="#" target="_blank" rel="noreferrer">
-                            Portfolio
-                          </a>
-                        </span>
                       </div>
                     </div>
                     <div className="domain-lead__socialsWrapper w-fit h-auto mt-4 flex flex-row items-center justify-start gap-2 text-2xl text-white text-opacity-80 max-sm:justify-center max-sm:mx-auto">
-                      <a href="#" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
+                      <a href="https://www.instagram.com/ayushk._18/" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
                         <FaInstagram />
                       </a>
                       <a href="#" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
                         <FaLinkedinIn />
                       </a>
-                      <a href="#" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
-                        <FaGithub />
-                      </a>
                     </div>
-
                   </div>
                 </div>
               </div>
