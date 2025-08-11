@@ -53,8 +53,11 @@ const Home: NextPage = () => {
       <div className="home max-sm:overflow-hidden relative z-10">
         <main className="checks-container">
           <div className="hero-section-wrapper w-fit h-auto mx-auto flex flex-col items-center justify-center min-h-screen">
-            <h1 className="flex flex-col items-center justify-center gap-4 max-sm:text-4xl text-7xl font-product-bungee text-center -mt-24">
-              Where<GradientText>developers level</GradientText> up and<GradientText>stand out</GradientText>
+            <h1 className="flex flex-col items-center justify-center gap-4 max-sm:text-3xl max-sm:gap-2 text-7xl font-product-bungee text-center -mt-24 max-sm:-mt-12 max-sm:px-2 max-sm:pt-[40px] sm:pt-[40px]">
+              <span className="max-sm:break-words max-sm:text-center">Where</span>
+              <GradientText className="max-sm:break-words max-sm:text-center">developers level</GradientText>
+              <span className="max-sm:break-words max-sm:text-center">up and</span>
+              <GradientText className="max-sm:break-words max-sm:text-center">stand out</GradientText>
             </h1>
 
             <Link href="https://discord.com" className="mt-12" target="_blank">

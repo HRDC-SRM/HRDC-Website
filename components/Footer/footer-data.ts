@@ -27,7 +27,7 @@ const directLinks: Array<FooterOptionType> = [
 
 const socialLinks: Array<SocialLinkType> = [
   {
-    iconPath: "linkedin-3D-icon.png",
+    iconPath: "LinkedIn-3D-Icon.png",
     label: "linkedin",
     link: "https://www.linkedin.com/company/hrdc-srm/about/",
   },
@@ -37,7 +37,7 @@ const socialLinks: Array<SocialLinkType> = [
   //   link: "https://whatsapp.com/",
   // },
   {
-    iconPath: "instagram-3D-icon.png",
+    iconPath: "instagram-3D-Icon.png",
     label: "instagram",
     link: "https://www.instagram.com/hrdc.srm/",
   },
