@@ -17,7 +17,14 @@ export const StickyScroll = ({
 }) => {
   const [activeCard, setActiveCard] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
   const cardRefs = useRef<React.RefObject<HTMLDivElement>[]>([]);
+  const alignTimeout = useRef<number | null>(null);
+  const scrollIdleTimeout = useRef<number | null>(null);
+  const isScrollingRef = useRef(false);
+  const [bottomSpacer, setBottomSpacer] = useState(0);
+  const scrollRaf = useRef<number | null>(null);
+  const [alignTick, setAlignTick] = useState(0);
   const { scrollYProgress } = useScroll({
     container: ref,
     offset: ["start start", "end start"],
@@ -49,30 +56,35 @@ export const StickyScroll = ({
     }
 
     const containerRect = ref.current.getBoundingClientRect();
-    let maxRatio = 0;
-    let newActive = activeCard;
+    const containerMid = (containerRect.top + containerRect.bottom) / 2;
+
+    // Prefer the card whose center is closest to the container's midpoint.
+    // This improves activation for the last (Creatives) card.
+    let bestIndex = activeCard;
+    let bestDistance = Number.POSITIVE_INFINITY;
 
     content.forEach((_, index) => {
       const card = cardRefs.current[index]?.current;
-      if (card) {
-        const cardRect = card.getBoundingClientRect();
-        const top = Math.max(cardRect.top, containerRect.top);
-        const bottom = Math.min(cardRect.bottom, containerRect.bottom);
-        const visibleHeight = Math.max(0, bottom - top);
-        const ratio = visibleHeight / cardRect.height;
-
-        if (ratio > maxRatio) {
-          maxRatio = ratio;
-          newActive = index;
-        }
+      if (!card) return;
+      const rect = card.getBoundingClientRect();
+      const cardMid = (rect.top + rect.bottom) / 2;
+      const distance = Math.abs(cardMid - containerMid);
+      // Only consider cards with some overlap in the viewport of the container
+      const overlapTop = Math.max(rect.top, containerRect.top);
+      const overlapBottom = Math.min(rect.bottom, containerRect.bottom);
+      const isOverlapping = overlapBottom - overlapTop > 0;
+      if (isOverlapping && distance < bestDistance) {
+        bestDistance = distance;
+        bestIndex = index;
       }
     });
 
-    setActiveCard(newActive);
+    setActiveCard(bestIndex);
   };
 
+  // Rely on onScroll; avoid double-firing updateActiveCard from framer-motion events
   useMotionValueEvent(scrollYProgress, "change", () => {
-    updateActiveCard();
+    // no-op
   });
 
   const backgroundColors = [
@@ -115,7 +127,25 @@ export const StickyScroll = ({
 
   useEffect(() => {
     setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
-  }, [activeCard]);
+  }, [activeCard, alignTick]);
+
+  // Update bottom spacer based on image & last card height so last card can center-align to image
+  useEffect(() => {
+    if (!window.matchMedia('(min-width: 768px)').matches) return;
+    const updateSpacer = () => {
+      const img = imageRef.current;
+      const lastCard = cardRefs.current[cardRefs.current.length - 1]?.current;
+      if (!img || !lastCard) return;
+      const imgRect = img.getBoundingClientRect();
+      const lastRect = lastCard.getBoundingClientRect();
+      // Allow enough trailing space: half image height + half last-card height, then tighten slightly
+      const space = Math.max(0, Math.round(imgRect.height / 2 + lastRect.height / 2) - 12);
+      setBottomSpacer(space);
+    };
+    updateSpacer();
+    window.addEventListener('resize', updateSpacer);
+    return () => window.removeEventListener('resize', updateSpacer);
+  }, []);
 
   // Ensure activeCard is correctly set on mount and when layout changes
   useEffect(() => {
@@ -130,30 +160,69 @@ export const StickyScroll = ({
     // Avoid auto-snapping on small screens to preserve natural touch scrolling
     if (!window.matchMedia('(min-width: 768px)').matches) return;
 
+    // Only auto-align for the last card (Creatives) to avoid jitter when scrolling up other sections
+    if (activeCard !== content.length - 1) return;
+
     const container = ref.current;
     if (!container) return;
 
     const card = cardRefs.current[activeCard]?.current;
     if (!card) return;
 
-    const getStickyOffset = () => {
-      // Tailwind top-8 (32px), md:top-12 (48px), lg:top-20 (80px)
-      if (window.matchMedia('(min-width: 1024px)').matches) return 80;
-      if (window.matchMedia('(min-width: 768px)').matches) return 48;
-      return 32;
-    };
+    // If user is currently scrolling, skip alignment until idle
+    if (isScrollingRef.current) return;
 
-    // Compute how much to scroll so the card's top aligns just below the sticky image top
-    const containerRect = container.getBoundingClientRect();
-    const cardRect = card.getBoundingClientRect();
-    const stickyOffset = getStickyOffset();
-    const delta = (cardRect.top - containerRect.top) - stickyOffset;
-
-    // Only adjust if noticeably misaligned and scrolling stays in bounds
-    if (Math.abs(delta) > 4) {
-      const target = Math.max(0, Math.min(container.scrollTop + delta, container.scrollHeight - container.clientHeight));
-      container.scrollTo({ top: target, behavior: 'smooth' });
+    // Debounce to avoid jitter
+    if (alignTimeout.current) {
+      window.clearTimeout(alignTimeout.current as unknown as number);
+      alignTimeout.current = null;
     }
+
+    alignTimeout.current = window.setTimeout(() => {
+      // Center the active card to the sticky image box center if available
+      const containerRect = container.getBoundingClientRect();
+      const cardRect = card.getBoundingClientRect();
+      const imageEl = imageRef.current;
+
+      if (imageEl) {
+        const imageRect = imageEl.getBoundingClientRect();
+        // Prefer aligning the title text with the image
+        const titleEl = card.querySelector('h2');
+        const targetRect = titleEl ? titleEl.getBoundingClientRect() : cardRect;
+        const targetMid = (targetRect.top + targetRect.bottom) / 2;
+        const imageMid = (imageRect.top + imageRect.bottom) / 2;
+        // For the last card (Creatives), use zero bias and a tighter snap threshold
+        const isLast = activeCard === content.length - 1;
+        const mqLg = window.matchMedia('(min-width: 1024px)').matches;
+        const fineTune = isLast ? 0 : (mqLg ? -20 : -12); // no bias for Creatives
+        const delta = (targetMid - imageMid) + fineTune;
+        const threshold = isLast ? 1 : 4;
+        if (Math.abs(delta) > threshold) {
+          const target = Math.max(0, Math.min(container.scrollTop + delta, container.scrollHeight - container.clientHeight));
+          container.scrollTo({ top: target, behavior: 'smooth' });
+        }
+      } else {
+        // Fallback: align card top with typical sticky offset
+        const getStickyOffset = () => {
+          if (window.matchMedia('(min-width: 1024px)').matches) return 80; // lg:top-20
+          if (window.matchMedia('(min-width: 768px)').matches) return 48; // md:top-12
+          return 32; // top-8
+        };
+        const stickyOffset = getStickyOffset();
+        const delta = (cardRect.top - containerRect.top) - stickyOffset;
+        if (Math.abs(delta) > 4) {
+          const target = Math.max(0, Math.min(container.scrollTop + delta, container.scrollHeight - container.clientHeight));
+          container.scrollTo({ top: target, behavior: 'smooth' });
+        }
+      }
+    }, 120);
+
+    return () => {
+      if (alignTimeout.current) {
+        window.clearTimeout(alignTimeout.current as unknown as number);
+        alignTimeout.current = null;
+      }
+    };
   }, [activeCard]);
 
   // Mobile: simple per-card rendering (no sticky, no active scroll logic)
@@ -182,9 +251,32 @@ export const StickyScroll = ({
   }
 
   // Tablet/Desktop: sticky image with scroll-synced text
+  const handleScroll: React.UIEventHandler<HTMLDivElement> = () => {
+    isScrollingRef.current = true;
+    if (scrollIdleTimeout.current) {
+      window.clearTimeout(scrollIdleTimeout.current as unknown as number);
+      scrollIdleTimeout.current = null;
+    }
+    scrollIdleTimeout.current = window.setTimeout(() => {
+      isScrollingRef.current = false;
+      // After idle, try one more alignment in case last section needs centering
+      // Trigger effect to re-align even if activeCard hasn't changed
+      setAlignTick((t) => t + 1);
+    }, 180);
+    if (scrollRaf.current == null) {
+      scrollRaf.current = window.requestAnimationFrame(() => {
+        updateActiveCard();
+        if (scrollRaf.current) {
+          window.cancelAnimationFrame(scrollRaf.current);
+        }
+        scrollRaf.current = null;
+      });
+    }
+  };
+
   return (
     <div
-      className="h-[60rem] md:h-[70rem] lg:h-[80rem] overflow-y-auto flex flex-col lg:flex-row justify-center relative lg:space-x-24 p-8 md:p-12 lg:p-20 scrollbar-hide bg-slate-900"
+      className="h-[60rem] md:h-[70rem] lg:h-[80rem] overflow-y-auto flex flex-col lg:flex-row justify-center relative lg:space-x-6 p-8 md:p-12 lg:p-20 scrollbar-hide bg-slate-900"
       style={{
         background: "transparent",
         scrollbarWidth: "none",
@@ -192,12 +284,20 @@ export const StickyScroll = ({
         WebkitOverflowScrolling: "touch"
       }}
       ref={ref}
-      onScroll={updateActiveCard}
+      onScroll={handleScroll}
     >
       <div className="relative z-10 flex items-start px-4 md:px-8 lg:px-12 order-2 lg:order-1 pt-0 lg:pt-0 mt-0 md:mt-0">
         <div className="max-w-full lg:max-w-5xl">
           {content.map((item, index) => (
-            <div ref={cardRefs.current[index]} key={item.title + index} className={cn("my-24 md:my-32 lg:my-40", index === 0 ? "mt-6 md:mt-24" : "")}>
+            <div
+              ref={cardRefs.current[index]}
+              key={item.title + index}
+              className={cn(
+                "my-24 md:my-32 lg:my-32",
+                index === 0 ? "mt-6 md:mt-24" : "",
+                index === content.length - 1 ? "my-8 md:my-12 lg:my-16" : ""
+              )}
+            >
               <motion.h2
                 initial={{
                   opacity: 0,
@@ -222,7 +322,9 @@ export const StickyScroll = ({
               </motion.p>
             </div>
           ))}
-          <div className="h-40 md:h-60 lg:h-80" />
+          <div className="h-2 md:h-0 lg:h-0" />
+          {/* Extra internal spacer only for md+ to allow last card to center to image without increasing external gap */}
+          <div className="hidden md:block" style={{ height: bottomSpacer }} aria-hidden />
         </div>
       </div>
       <div
@@ -233,6 +335,7 @@ export const StickyScroll = ({
         style={{
           background: backgroundGradient
         }}
+        ref={imageRef}
       >
         <motion.div className="relative w-full h-full">
           {React.isValidElement(content[activeCard].content) ? (

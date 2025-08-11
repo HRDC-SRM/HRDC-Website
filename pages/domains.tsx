@@ -141,7 +141,7 @@ const DomainsPage: React.FC = () => {
           </div>
 
           {/* Domain Cards Section */}
-          <div className="mb-8 md:mb-16">
+          <div className="mb-1 md:mb-2">
             <div className="max-w-full md:max-w-7xl lg:max-w-8xl mx-auto px-2 md:px-4">
               <div className="sticky-scroll-container">
                 <StickyScroll content={DOMAIN_CONTENT} />
@@ -155,7 +155,7 @@ const DomainsPage: React.FC = () => {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 50, scale: 0.9 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-center mt-20 mb-16 relative"
+                    className="text-center mt-2 md:mt-3 mb-6 relative"
                   >
                     <div className="absolute inset-0 flex items-center justify-center opacity-5">
                       <motion.div 
