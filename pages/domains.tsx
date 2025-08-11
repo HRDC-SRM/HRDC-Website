@@ -120,10 +120,10 @@ const DomainsPage: React.FC = () => {
       </div>
       
       {/* Foreground content with proper z-index */}
-      <div className="min-h-screen relative z-10">
+      <div className="relative z-10">
         <main className="container mx-auto px-4 py-8">
           {/* Hero Section */}
-          <div className="text-center mb-16 pt-8">
+          <div className="text-center mb-8 pt-4">
             <div className="mb-8 flex justify-start">
               {/* <Link href="/">
                 <Button type="secondary" shade="product-purple-light">
@@ -131,31 +131,36 @@ const DomainsPage: React.FC = () => {
                 </Button>
               </Link> */}
             </div>
-            <h1 className="font-product-bungee text-5xl md:text-7xl mt-8 mb-4 flex flex-col items-center justify-between gap-4">
-              <span className="text-white">{"Choose Your Domain"}</span>
-              <span className="text-green-500">{"Join the Team"}</span>
+            <h1 className="font-product-bungee text-5xl md:text-6xl lg:text-7xl mb-6 flex flex-col items-center gap-3 tracking-tight">
+              <span className="text-white drop-shadow-md">{"Choose Your Domain"}</span>
+              <span className="text-green-400 text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-green-400 to-emerald-300 text-transparent bg-clip-text">
+                {"Join the Team"}
+              </span>
             </h1>
-            <span className="mt-6 text-lg md:text-xl text-product-text-light text-center max-w-3xl mx-auto font-product-manrope leading-relaxed">
-              {"Explore our different domains and find where your skills and passion align. Each domain plays a crucial role in our community's success."}
-            </span>
+            <p className="text-xl md:text-2xl text-gray-200 text-center max-w-3xl mx-auto font-product-manrope leading-relaxed">
+              {"Explore our different domains and find where your skills and passion align. "}
+              <span className="font-medium text-white">
+                {"Each domain plays a crucial role in our community's success."}
+              </span>
+            </p>
           </div>
 
-          {/* Domain Cards Section */}
-          <div className="mb-1 md:mb-2">
-            <div className="max-w-full md:max-w-7xl lg:max-w-8xl mx-auto px-2 md:px-4">
-              <div className="sticky-scroll-container">
-                <StickyScroll content={DOMAIN_CONTENT} />
-              </div>
-              
-              {/* Ready to Join Section */}
-              <AnimatePresence>
-                {showReadyToJoin && (
+          {/* Domain Cards Section - Removed extra spacing */}
+          <div className="-mt-8">
+            <div className="w-full">
+              <StickyScroll content={DOMAIN_CONTENT} />
+            </div>
+          </div>
+
+          {/* Ready to Join Section */}
+          <AnimatePresence>
+            {showReadyToJoin && (
                   <motion.div
                     initial={{ opacity: 0, y: 50, scale: 0.9 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 50, scale: 0.9 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="text-center mt-2 md:mt-3 mb-6 relative"
+                    className="text-center pt-8 md:pt-12 lg:pt-16 pb-12 md:pb-16 lg:pb-20 relative"
                   >
                     <div className="absolute inset-0 flex items-center justify-center opacity-5">
                       <motion.div 
@@ -171,23 +176,30 @@ const DomainsPage: React.FC = () => {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2, duration: 0.6 }}
-                      className="text-3xl md:text-4xl font-product-bungee text-white mb-6 relative z-10"
+                      className="text-4xl md:text-5xl font-product-bungee text-white mb-8 relative z-10 tracking-tight"
                     >
-                      Ready to Join?
+                      <span className="bg-gradient-to-r from-green-300 to-emerald-400 text-transparent bg-clip-text">
+                        Ready to Join?
+                      </span>
                     </motion.h2>
                     <motion.p 
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.4, duration: 0.6 }}
-                      className="text-product-text-light text-lg md:text-xl mb-10 font-product-manrope max-w-3xl mx-auto relative z-10 leading-relaxed"
+                      className="text-xl md:text-2xl text-gray-200 mb-12 font-product-manrope max-w-3xl mx-auto relative z-10 leading-relaxed"
                     >
-                      Choose the domain that best fits your skills and interests. We&apos;re looking for passionate individuals who want to make a difference in the tech community.
+                      <span className="font-medium">
+                        Choose the domain that best fits your skills and interests. 
+                      </span>
+                      <span className="font-semibold text-white">
+                        We&apos;re looking for passionate individuals who want to make a difference in the tech community.
+                      </span>
                     </motion.p>
                     <motion.div 
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.6, duration: 0.6 }}
-                      className="flex gap-4 justify-center flex-wrap relative z-10"
+                      className="flex flex-col md:flex-row gap-4 justify-center items-center flex-wrap relative z-10"
                     >
                       <Button type="primary" shade="product-purple-light">
                         Apply Now
@@ -201,8 +213,6 @@ const DomainsPage: React.FC = () => {
                   </motion.div>
                 )}
               </AnimatePresence>
-            </div>
-          </div>
         </main>
       </div>
     </React.Fragment>
