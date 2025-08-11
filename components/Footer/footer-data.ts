@@ -29,13 +29,13 @@ const socialLinks: Array<SocialLinkType> = [
   {
     iconPath: "linkedin-3D-icon.png",
     label: "linkedin",
-    link: "https://www.linkedin.com",
+    link: "https://www.linkedin.com/company/hrdc-srm/about/",
   },
-  {
-    iconPath: "whatsapp-3D-icon.png",
-    label: "whatsapp",
-    link: "https://whatsapp.com/",
-  },
+  // {
+  //   iconPath: "whatsapp-3D-icon.png",
+  //   label: "whatsapp",
+  //   link: "https://whatsapp.com/",
+  // },
   {
     iconPath: "instagram-3D-icon.png",
     label: "instagram",
