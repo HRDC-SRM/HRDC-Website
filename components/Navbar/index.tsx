@@ -16,6 +16,7 @@ const Navbar: React.FunctionComponent<NavbarOptionType> = () => {
   const navbarOptionsRef = useRef<Array<NavbarOptionType>>(NavbarOptionsData);
   const router = useRouter();
   const isAboutUsPage = router.pathname === "/aboutUs";
+  const isDomainsPage = router.pathname === "/domains";
 
   return (
     <div className="navbar wrapped-view py-8 flex flex-row items-center justify-between max-sm:pt-8 pb-2">
@@ -58,9 +59,15 @@ const Navbar: React.FunctionComponent<NavbarOptionType> = () => {
             )}
           </span>
         </Link>
-        <Link href="/events">
-          <Button type="secondary" shade="#1BA94C">{"Events"}</Button>
-        </Link>
+        {isDomainsPage ? (
+          <Link href="/">
+            <Button type="secondary" shade="#1BA94C">{"HOME"}</Button>
+          </Link>
+        ) : (
+          <Link href="/events">
+            <Button type="secondary" shade="#1BA94C">{"Events"}</Button>
+          </Link>
+        )}
       </div>
     </div>
   );

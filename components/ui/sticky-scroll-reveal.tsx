@@ -61,7 +61,7 @@ export const StickyScroll = ({
       <div className="p-4 md:p-8">
         {content.map((item, index) => (
           <div key={item.title + index} className="my-12">
-            <h2 className="text-3xl font-bold text-white font-product-bungee mb-4">
+            <h2 className="text-3xl font-bold font-product-bungee mb-4" style={{ color: "#05C770" }}>
               {item.title}
             </h2>
             <div className="relative w-full h-80 rounded-2xl overflow-hidden shadow-lg mb-4">
@@ -73,7 +73,7 @@ export const StickyScroll = ({
                 item.content
               )}
             </div>
-            <p className="text-lg text-product-text-light font-product-manrope">
+            <p className="text-base text-product-text-light font-product-manrope">
               {item.description}
             </p>
           </div>
@@ -103,13 +103,14 @@ export const StickyScroll = ({
             >
               <h2 
                 className={`text-4xl md:text-5xl font-bold mb-6 transition-opacity duration-200 ${
-                  activeCard === index ? 'text-white opacity-100' : 'text-gray-500 opacity-30'
+                  activeCard === index ? 'opacity-100' : 'opacity-30'
                 }`}
+                style={{ color: activeCard === index ? "#05C770" : "#6B7280" }}
               >
                 {item.title}
               </h2>
               <p 
-                className={`text-xl md:text-2xl max-w-2xl leading-relaxed transition-opacity duration-200 ${
+                className={`text-lg md:text-xl max-w-2xl leading-relaxed transition-opacity duration-200 ${
                   activeCard === index ? 'text-gray-300 opacity-100' : 'text-gray-500 opacity-30'
                 }`}
               >

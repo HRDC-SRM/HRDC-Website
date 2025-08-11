@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 // Domain data for the sticky scroll
 const DOMAIN_CONTENT = [
   {
-    title: "Technical",
+    title: "TECHNICAL",
     description:
       "Core development and technical implementation team. Lead community projects, create workshops, mentor developers, contribute to open source, and drive technical innovation. Build the future of technology with cutting-edge solutions.",
     content: (
@@ -25,7 +25,7 @@ const DOMAIN_CONTENT = [
     ),
   },
   {
-    title: "Corporate",
+    title: "CORPORATE",
     description:
       "Business development and external relations powerhouse. Manage partnerships, organize corporate events, handle sponsorships, coordinate with industry professionals, and develop business strategies that drive growth.",
     content: (
@@ -41,7 +41,7 @@ const DOMAIN_CONTENT = [
     ),
   },
   {
-    title: "Creative",
+    title: "CREATIVE",
     description:
       "Design, content creation, and creative direction team. Design community branding, create social media content, develop marketing campaigns, design event materials, and maintain visual consistency across all platforms.",
     content: (
@@ -131,13 +131,13 @@ const DomainsPage: React.FC = () => {
                 </Button>
               </Link> */}
             </div>
-            <h1 className="font-product-bungee text-5xl md:text-6xl lg:text-7xl mb-6 flex flex-col items-center gap-3 tracking-tight">
+            <h1 className="font-product-bungee text-7xl max-sm:text-4xl mb-6 flex flex-col items-center gap-3 tracking-tight">
               <span className="text-white drop-shadow-md">{"Choose Your Domain"}</span>
-              <span className="text-green-400 text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-green-400 to-emerald-300 text-transparent bg-clip-text">
+              <span className="text-green-400 text-6xl max-sm:text-3xl bg-gradient-to-r from-green-400 to-emerald-300 text-transparent bg-clip-text">
                 {"Join the Team"}
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-200 text-center max-w-3xl mx-auto font-product-manrope leading-relaxed">
+            <p className="text-lg text-gray-200 text-center max-w-2xl mx-auto font-product-manrope leading-relaxed">
               {"Explore our different domains and find where your skills and passion align. "}
               <span className="font-medium text-white">
                 {"Each domain plays a crucial role in our community's success."}
@@ -176,7 +176,7 @@ const DomainsPage: React.FC = () => {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2, duration: 0.6 }}
-                      className="text-4xl md:text-5xl font-product-bungee text-white mb-8 relative z-10 tracking-tight"
+                      className="text-5xl max-sm:text-3xl font-product-bungee text-white mb-8 relative z-10 tracking-tight"
                     >
                       <span className="bg-gradient-to-r from-green-300 to-emerald-400 text-transparent bg-clip-text">
                         Ready to Join?
@@ -186,7 +186,7 @@ const DomainsPage: React.FC = () => {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.4, duration: 0.6 }}
-                      className="text-xl md:text-2xl text-gray-200 mb-12 font-product-manrope max-w-3xl mx-auto relative z-10 leading-relaxed"
+                      className="text-lg text-gray-200 mb-12 font-product-manrope max-w-2xl mx-auto relative z-10 leading-relaxed"
                     >
                       <span className="font-medium">
                         Choose the domain that best fits your skills and interests. 
@@ -201,14 +201,9 @@ const DomainsPage: React.FC = () => {
                       transition={{ delay: 0.6, duration: 0.6 }}
                       className="flex flex-col md:flex-row gap-4 justify-center items-center flex-wrap relative z-10"
                     >
-                      <Button type="primary" shade="product-purple-light">
+                      <Button type="secondary" shade="product-purple-light">
                         Apply Now
                       </Button>
-                      <Link href="/">
-                        <Button type="secondary" shade="product-purple-light">
-                          Learn More About Us
-                        </Button>
-                      </Link>
                     </motion.div>
                   </motion.div>
                 )}

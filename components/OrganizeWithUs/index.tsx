@@ -21,7 +21,7 @@ const OrganizeWithUs: React.FunctionComponent = () => {
               </Button>
             </Link>
             <Link
-              href="https://twitter.com/hekorscommunity"
+              href="#"
               target="_blank"
               rel="noreferrer"
             >

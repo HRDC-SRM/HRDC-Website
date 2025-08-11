@@ -5,7 +5,6 @@ import { NextPage } from "next";
 
 // Component Imports
 import GetStarted from "@/components/GetStarted";
-// import HackathonCTA from "@/components/HackathonCTA";
 import OrganizeWithUs from "@/components/OrganizeWithUs";
 import Team from "@/components/Team";
 import Button from "@/components/ui-patterns/Button";
@@ -119,17 +118,11 @@ const Home: NextPage = () => {
               </div>
             </div>
 
-            {/* <EmojiLayer /> */}
           </div>
-
-
         </main>
-
         <GetStarted />
         <OrganizeWithUs />
         <Team />
-        {/* <HackathonCTA /> */}
-        {/* <CommunityNarratives /> */}
       </div>
     </React.Fragment>
   );
