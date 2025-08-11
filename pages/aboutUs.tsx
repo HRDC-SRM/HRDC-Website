@@ -123,7 +123,7 @@ const AboutUs: React.FC = () => {
                       </div>
                     </div>
                     <div className="domain-lead__socialsWrapper w-fit h-auto mt-4 flex flex-row items-center justify-start gap-2 text-2xl text-white text-opacity-80 max-sm:justify-center max-sm:mx-auto max-sm:text-xl">
-                      <a href="https://www.instagram.com/shagun_upman/" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
+                      <a href="https://www.instagram.com/_artsy_monkey_" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
                         <FaInstagram />
                       </a>
                       <a href="https://www.linkedin.com/in/shagun-upman-7086a034b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noreferrer" className="hover:rotate-12 transition-transform duration-200">
