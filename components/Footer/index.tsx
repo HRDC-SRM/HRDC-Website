@@ -148,7 +148,7 @@ const Footer: React.FunctionComponent<Props> = () => {
                 )
               )}
               {/* Discord icon in social icons */}
-                             <Link href="https://discord.com" target="_blank" className="social-link group">
+                             {/* <Link href="https://discord.com" target="_blank" className="social-link group">
                  <div className="social-icon-container relative p-2 bg-gray-800 rounded-full hover:bg-gray-700 transition-all duration-200 hover:scale-110">
                    <Image
                      src="/social/discord-icon.svg"
@@ -160,7 +160,7 @@ const Footer: React.FunctionComponent<Props> = () => {
                    />
                    <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-600 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-200 blur-sm"></div>
                  </div>
-               </Link>
+               </Link> */}
             </div>
           </div>
 
