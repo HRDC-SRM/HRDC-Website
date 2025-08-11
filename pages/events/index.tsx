@@ -7,7 +7,6 @@ import { NextPage } from "next";
 // Components Imports
 import OrganizeWithUs from "@/components/OrganizeWithUs";
 import Button from "@/components/ui-patterns/Button";
-import UpcomingHackathons from "@/components/UpcomingHackathons";
 import UpcomingSessions from "@/components/UpcomingSessions";
 import MetaHead from "@/components/MetaHead";
 import DarkVeil from "@/components/ui-patterns/Darkveil"; // ✅ Background import
@@ -109,7 +108,6 @@ const Events: NextPage = () => {
         </div>
         <div className="upcoming-hackathons-section-wrapper">
           <UpcomingSessions />
-          <UpcomingHackathons />
           <OrganizeWithUs />
         </div>
       </div>
