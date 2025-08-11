@@ -39,9 +39,7 @@ const Team: React.FunctionComponent<TeamMemberCardType> = () => {
     <React.Fragment>
       <section id="team-section" className="team-section py-24 my-12  bg-black bg-opacity-40 ">
         <div className="team-section-content-wrapper wrapped-view">
-          <h3 className="get-started-title font-semibold tracking-wider text-sm uppercase flex flex-row text-white text-opacity-50 max-sm:items-center max-sm:justify-center max-sm: max-sm:mx-auto">
-            {"The Core Team"}
-          </h3>
+
           <h1 className="get-started-headline font-product-bungee mt-4 text-4xl flex flex-col items-start justify-start w-fit h-fit max-sm:items-center max-sm:justify-center max-sm:text-3xl max-sm:mx-auto">
             <span className="text-white">
               <span>{"Meet the"}</span>
@@ -87,13 +85,13 @@ const Team: React.FunctionComponent<TeamMemberCardType> = () => {
           </div>
           
           {/* Meet the Team Button */}
-          <div className="meet-team-button-wrapper mt-12 flex justify-center">
+          {/* <div className="meet-team-button-wrapper mt-12 flex justify-center">
             <Link href="/aboutUs">
               <Button type="secondary" shade="#05c770">
                 Meet the Team
               </Button>
             </Link>
-          </div>
+          </div> */}
         </div>
       </section>
     </React.Fragment>
