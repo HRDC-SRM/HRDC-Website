@@ -45,7 +45,7 @@ const Home: NextPage = () => {
         />
       </div>
       <MetaHead
-        title="HRDC SRMIST"
+        title="HRTC SRMIST"
         description="Your Space to Learn, Build, and Level Up"
       />      
 

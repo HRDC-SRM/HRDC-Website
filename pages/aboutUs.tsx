@@ -46,7 +46,7 @@ const AboutUs: React.FC = () => {
           <h1 className="get-started-headline font-product-bungee mt-4 text-4xl flex flex-row items-center justify-center w-fit h-fit gap-2 mx-auto max-sm:text-3xl max-sm:flex-col max-sm:text-center max-sm:gap-1">
             <span className="text-white">{"The "}</span>
             <span style={{ color: "#ff4e4e" }}>{" Core Team "}</span>
-            <span className="text-white">{" of HRDC SRM"}</span>
+            <span className="text-white">{" of HRTC SRM"}</span>
           </h1>
 
           <div className="founders-list-wrapper mt-12 flex flex-row items-start justify-start gap-12 max-sm:flex-col max-sm:items-center max-sm:justify-center max-sm:mx-auto max-sm:gap-8 max-sm:mt-8">

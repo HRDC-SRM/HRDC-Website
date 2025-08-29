@@ -32,7 +32,7 @@ const Footer: React.FunctionComponent<Props> = () => {
               </div>
               <div className="title-container">
                 <h1 className="hekors-title font-product-bungee text-product-text-light text-4xl mb-1 max-sm:text-xl">
-                  {"Hackerrank Developers Community"}
+                  {"Hackerrank Technical Circle"}
                 </h1>
                 <p className="hekors-tagline font-product-manrope text-gray-300 text-base text-2xl max-sm:text-sm">
                   {"Your Space to Learn, Build, and Level Up."}
@@ -169,7 +169,7 @@ const Footer: React.FunctionComponent<Props> = () => {
             <div className="text-center">
               <p className="text-gray-400 text-sm">
                 &copy;{" "}
-                {"Hackerrank Developers Community " +
+                {"Hackerrank Technical Circle " +
                   new Date().getFullYear() +
                   "-" +
                   Number(new Date().getFullYear() + 1)}

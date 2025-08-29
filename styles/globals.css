@@ -5,6 +5,7 @@
 /* importing style modules */
 @import url("./typography.css");
 @import url("./button-styles.css");
+@import url("./loading-animation.css");
 
 
 body,

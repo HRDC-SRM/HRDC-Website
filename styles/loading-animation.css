@@ -1,0 +1,98 @@
+/* Custom Loading Animation Styles */
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes text-glow {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(0, 234, 100, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 30px rgba(0, 234, 100, 0.8), 0 0 40px rgba(0, 234, 100, 0.6);
+  }
+}
+
+@keyframes loading-bar-fill {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes logo-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Enhanced Loading Animation Classes */
+.loading-gradient-bg {
+  background: linear-gradient(-45deg, #000000, #1a1a1a, #000000, #0a0a0a);
+  background-size: 400% 400%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+.loading-text-glow {
+  animation: text-glow 2s ease-in-out infinite;
+}
+
+.loading-bar-animated {
+  animation: loading-bar-fill 3s ease-in-out infinite;
+}
+
+.logo-bounce-animation {
+  animation: logo-bounce 2s ease-in-out infinite;
+}
+
+/* Video Loading States */
+.video-loading {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.video-loaded {
+  opacity: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .loading-text {
+    font-size: 2rem;
+  }
+  
+  .loading-subtitle {
+    font-size: 1rem;
+  }
+  
+  .loading-bar {
+    width: 80%;
+    max-width: 300px;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .loading-gradient-bg,
+  .loading-text-glow,
+  .loading-bar-animated,
+  .logo-bounce-animation {
+    animation: none;
+  }
+}

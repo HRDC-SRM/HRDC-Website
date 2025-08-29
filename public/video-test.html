@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Loading Test</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        video {
+            width: 100%;
+            height: auto;
+            border: 2px solid white;
+            margin: 20px 0;
+        }
+        .status {
+            background: #333;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .success { color: #4CAF50; }
+        .error { color: #f44336; }
+        .info { color: #2196F3; }
+    </style>
+</head>
+<body>
+    <h1>🎬 Video Loading Test</h1>
+    
+    <div class="video-container">
+        <div class="status">
+            <h3>Test Information:</h3>
+            <p><strong>Video File:</strong> loading.mp4</p>
+            <p><strong>File Size:</strong> 1.8MB</p>
+            <p><strong>Format:</strong> MP4</p>
+            <p><strong>Expected:</strong> Video should play automatically</p>
+        </div>
+
+        <h3>Video Player:</h3>
+        <video 
+            id="testVideo"
+            autoplay 
+            muted 
+            loop 
+            playsinline
+            controls
+            width="800"
+            height="450"
+        >
+            <source src="/loading.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="status">
+            <h3>Test Results:</h3>
+            <div id="results">
+                <p class="info">Testing video loading...</p>
+            </div>
+        </div>
+
+        <div class="status">
+            <h3>Manual Controls:</h3>
+            <button onclick="playVideo()" style="background: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; margin: 5px; cursor: pointer;">Play Video</button>
+            <button onclick="pauseVideo()" style="background: #f44336; color: white; padding: 10px 20px; border: none; border-radius: 4px; margin: 5px; cursor: pointer;">Pause Video</button>
+            <button onclick="reloadVideo()" style="background: #2196F3; color: white; padding: 10px 20px; border: none; border-radius: 4px; margin: 5px; cursor: pointer;">Reload Video</button>
+        </div>
+    </div>
+
+    <script>
+        const video = document.getElementById('testVideo');
+        const results = document.getElementById('results');
+        
+        function updateStatus(message, type = 'info') {
+            results.innerHTML = `<p class="${type}">${message}</p>`;
+        }
+        
+        // Video event listeners
+        video.addEventListener('loadstart', () => {
+            updateStatus('🔄 Video loading started', 'info');
+        });
+        
+        video.addEventListener('loadeddata', () => {
+            updateStatus('✅ Video data loaded successfully', 'success');
+        });
+        
+        video.addEventListener('canplay', () => {
+            updateStatus('🎯 Video can play', 'success');
+        });
+        
+        video.addEventListener('play', () => {
+            updateStatus('▶️ Video is playing', 'success');
+        });
+        
+        video.addEventListener('error', (e) => {
+            updateStatus(`❌ Video error: ${e.message || 'Unknown error'}`, 'error');
+        });
+        
+        video.addEventListener('loadedmetadata', () => {
+            updateStatus('📊 Video metadata loaded', 'info');
+        });
+        
+        // Manual control functions
+        function playVideo() {
+            try {
+                video.play();
+                updateStatus('▶️ Manual play triggered', 'info');
+            } catch (error) {
+                updateStatus(`❌ Play failed: ${error.message}`, 'error');
+            }
+        }
+        
+        function pauseVideo() {
+            video.pause();
+            updateStatus('⏸️ Video paused', 'info');
+        }
+        
+        function reloadVideo() {
+            video.load();
+            updateStatus('🔄 Video reloading...', 'info');
+        }
+        
+        // Auto-play test
+        setTimeout(() => {
+            if (video.readyState >= 2) {
+                updateStatus('✅ Video loaded and ready to play', 'success');
+            } else {
+                updateStatus('⚠️ Video not ready after timeout', 'error');
+            }
+        }, 3000);
+    </script>
+</body>
+</html>

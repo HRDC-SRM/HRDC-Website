@@ -1,0 +1,14 @@
+PLACE YOUR LOADING ANIMATION VIDEO HERE
+
+Replace this file with your actual video file named "loading.mp4"
+
+Recommended specifications:
+- Format: MP4
+- Resolution: 1920x1080 or higher
+- Duration: 3-5 seconds
+- File size: Under 10MB
+- Content: Should loop seamlessly
+
+The video will automatically play when the website loads and will be replaced by a beautiful fallback animation if the video fails to load.
+
+See LOADING_ANIMATION_SETUP.md for detailed instructions.
